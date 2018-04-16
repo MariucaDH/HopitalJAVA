@@ -11,6 +11,22 @@ package controleur.modèle;
  */
 public class Requetes {
     
+    private boolean is_local = false;
+    private boolean is_distant = false;
+    
+    
+    public Requetes(){
+        this.is_distant = true; // par defaut on utilise la connexion MYSQL distante
+    }
+    
+    public Requetes(String type){
+        if(type == "local"){
+            this.is_local = true;
+        } else if(type == "ece") {
+            this.is_distant = true;
+        }
+    }
+    
     
     
     

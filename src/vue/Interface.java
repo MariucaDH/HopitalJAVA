@@ -22,7 +22,7 @@ public class Interface extends JFrame{
     public Interface() {
         
     //Titre de l'interface
-    this.setTitle("Hopital");
+    this.setTitle("Bienvenue");
     //Taille de l'interface
     this.setSize(1000, 500);
     //On centre l'interface
@@ -48,7 +48,9 @@ public class Interface extends JFrame{
       
    //Initialisation d'une nouvelle interface
    Interface f = new Interface();
-
+   Reporting r = new Reporting();
+   Ajout a = new Ajout();
+   Requete rq = new Requete();
 }
 
 }

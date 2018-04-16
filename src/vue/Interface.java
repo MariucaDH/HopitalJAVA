@@ -12,7 +12,9 @@ package vue;
  */
 
 //On utilise JFrame pour notre interface graphique
+import controleur.modèle.Requetes;
 import java.awt.Color;
+import java.sql.SQLException;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JButton;
@@ -44,13 +46,14 @@ public class Interface extends JFrame{
     }
     
     //MAIN
-  public static void main(String[] args){
+  public static void main(String[] args) throws SQLException, ClassNotFoundException{
       
-   //Initialisation d'une nouvelle interface
-   Interface f = new Interface();
-   Reporting r = new Reporting();
-   Ajout a = new Ajout();
-   Requete rq = new Requete();
+  
+      Requetes r = new Requetes("local");
+      System.out.println(r.infirmiernuit());
+      System.out.println(r.services());
+      
+      
 }
 
 }

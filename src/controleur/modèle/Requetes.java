@@ -54,7 +54,7 @@ public class Requetes {
                 str[1] = nom;
                 
                 liste.add(str);
-                System.out.println(prenom);
+                //System.out.println(prenom);
             }
         
 
@@ -79,7 +79,7 @@ public class Requetes {
                 str[1] = nom;
                 
                 liste.add(str);
-                System.out.println(prenom);
+                //System.out.println(prenom);
             }
         
 
@@ -109,13 +109,60 @@ public class Requetes {
                 str[3] = nom;
                 
                 liste.add(str);
-                System.out.println(str[2]);
+                //System.out.println(str[2]);
             }
         
 
         return liste;
     }
     
+    
+    
+    public ArrayList moyennesalaires() throws SQLException{
+        
+         ResultSet rs;
+         ArrayList<String[]> liste;
+         liste = new ArrayList<>();
+
+ 
+            rs = stmt.executeQuery("SELECT code_service, AVG(salaire) as s FROM infirmier WHERE GROUP BY code_service");
+            while ( rs.next() ) {
+                String service = rs.getString("code_service");
+                String salaire = rs.getString("s");
+                
+                String[] str = new String[2];
+                str[0] = service;
+                str[1] = salaire;
+                
+                liste.add(str);
+            }
+        
+
+        return liste;
+    }
+    
+    public ArrayList litbatimentA() throws SQLException{
+        
+         ResultSet rs;
+         ArrayList<String[]> liste;
+         liste = new ArrayList<>();
+
+ 
+            rs = stmt.executeQuery("SELECT ROUND(AVG(chambre.nb_lits), 0) as lits, service.code as s FROM service, chambre WHERE service.batiment = 'A' AND service.code = chambre.code_service GROUP BY service.code");
+            while ( rs.next() ) {
+                String service = rs.getString("s");
+                String lits = rs.getString("lits");
+                
+                String[] str = new String[2];
+                str[0] = service;
+                str[1] = lits;
+                
+                liste.add(str);
+            }
+        
+
+        return liste;
+    }
     
     
     

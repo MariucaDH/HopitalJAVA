@@ -39,6 +39,7 @@ public class Bienvenue extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,6 +76,9 @@ public class Bienvenue extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 24)); // NOI18N
         jLabel1.setText("ACCUEIL");
 
+        jLabel7.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 12)); // NOI18N
+        jLabel7.setText("BROUGHT TO YOU BY : SOPHIE-ANNE CORDONNIER ~ MARIUCA DE HILLERIN ~ JEAN-BAPTISTE KALOYA");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -103,8 +107,13 @@ public class Bienvenue extends javax.swing.JFrame {
                         .addComponent(jLabel2)))
                 .addGap(407, 407, 407))
             .addGroup(layout.createSequentialGroup()
-                .addGap(561, 561, 561)
-                .addComponent(jLabel3)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(561, 561, 561)
+                        .addComponent(jLabel3))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(309, 309, 309)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 647, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -134,10 +143,12 @@ public class Bienvenue extends javax.swing.JFrame {
                             .addComponent(jLabel2))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3)
-                .addGap(181, 181, 181))
+                .addGap(159, 159, 159)
+                .addComponent(jLabel7)
+                .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(313, Short.MAX_VALUE)
+                    .addContainerGap(319, Short.MAX_VALUE)
                     .addComponent(jLabel5)
                     .addGap(296, 296, 296)))
         );
@@ -204,5 +215,6 @@ public class Bienvenue extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     // End of variables declaration//GEN-END:variables
 }

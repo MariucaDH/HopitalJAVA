@@ -54,7 +54,7 @@ public class Requetes {
                 str[1] = nom;
                 
                 liste.add(str);
-                //System.out.println(prenom);
+                System.out.println(prenom);
             }
         
 
@@ -79,7 +79,7 @@ public class Requetes {
                 str[1] = nom;
                 
                 liste.add(str);
-                //System.out.println(prenom);
+                System.out.println(prenom);
             }
         
 
@@ -109,7 +109,7 @@ public class Requetes {
                 str[3] = nom;
                 
                 liste.add(str);
-                //System.out.println(str[2]);
+                System.out.println(str[2]);
             }
         
 
@@ -267,6 +267,7 @@ public class Requetes {
 
         return liste;
     }
+    
     
     
 }

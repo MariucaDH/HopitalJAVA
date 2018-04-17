@@ -5,6 +5,8 @@
  */
 package vue;
 
+import java.awt.Color;
+
 /**
  *
  * @author Mariuca
@@ -15,6 +17,7 @@ public class Bienvenue extends javax.swing.JFrame {
      * Creates new form Bienvenue
      */
     public Bienvenue() {
+        getContentPane().setBackground(new Color(204,204,252));
         initComponents();
     }
 

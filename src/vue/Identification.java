@@ -18,6 +18,7 @@ public class Identification extends javax.swing.JFrame {
      * Creates new form Identification
      */
     public Identification() {
+        getContentPane().setBackground(new Color(241,232,247));
         initComponents();
         //getContentPane().setBackground(new Color(204,204,255));
     }
@@ -118,7 +119,7 @@ public class Identification extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
 
-                new Accueil().setVisible(true);
+                new Bienvenue().setVisible(true);
                 new Identification().setVisible(true);
 
             }

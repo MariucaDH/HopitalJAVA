@@ -5,6 +5,8 @@
  */
 package vue;
 
+import java.awt.Color;
+
 /**
  *
  * @author Mariuca
@@ -15,6 +17,7 @@ public class Reporting extends javax.swing.JFrame {
      * Creates new form Reporting
      */
     public Reporting() {
+        getContentPane().setBackground(new Color(199,247,250));
         initComponents();
     }
 

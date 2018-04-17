@@ -14,6 +14,7 @@ import java.awt.Color;
 public class Identification extends javax.swing.JFrame {
     
       public static Identification i = new Identification();
+      public static Bienvenue b = new Bienvenue();
 
     /**
      * Creates new form Identification
@@ -95,7 +96,7 @@ public class Identification extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-     new Bienvenue().setVisible(true);
+     b.setVisible(true);
      i.setVisible(false);
      
 // Si on clique sur "Valider", on arrive sur Bienvenue

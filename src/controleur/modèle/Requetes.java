@@ -54,7 +54,7 @@ public class Requetes {
                 str[1] = nom;
                 
                 liste.add(str);
-                //System.out.println(prenom);
+                System.out.println(prenom);
             }
         
 
@@ -79,7 +79,7 @@ public class Requetes {
                 str[1] = nom;
                 
                 liste.add(str);
-                //System.out.println(prenom);
+                System.out.println(prenom);
             }
         
 
@@ -109,7 +109,7 @@ public class Requetes {
                 str[3] = nom;
                 
                 liste.add(str);
-                //System.out.println(str[2]);
+                System.out.println(str[2]);
             }
         
 
@@ -156,6 +156,110 @@ public class Requetes {
                 String[] str = new String[2];
                 str[0] = service;
                 str[1] = lits;
+                
+                liste.add(str);
+            }
+        
+
+        return liste;
+    }
+    
+    public ArrayList malades3fois() throws SQLException{
+        
+         ResultSet rs;
+         ArrayList<String[]> liste;
+         liste = new ArrayList<>();
+
+ 
+            rs = stmt.executeQuery("SELECT ROUND(AVG(chambre.nb_lits), 0) as lits, service.code as s FROM service, chambre WHERE service.batiment = 'A' AND service.code = chambre.code_service GROUP BY service.code");
+            while ( rs.next() ) {
+                String service = rs.getString("s");
+                String lits = rs.getString("lits");
+                
+                String[] str = new String[2];
+                str[0] = service;
+                str[1] = lits;
+                
+                liste.add(str);
+            }
+        
+
+        return liste;
+    }
+    
+    public ArrayList docteursavecpatients() throws SQLException{
+        
+         ResultSet rs;
+         ArrayList<String[]> liste;
+         liste = new ArrayList<>();
+
+ 
+            rs = stmt.executeQuery("SELECT DISTINCT employe.prenom, employe.nom FROM soigne, employe WHERE employe.numero = soigne.no_docteur GROUP BY soigne.no_malade");
+            while ( rs.next() ) {
+                String prenom = rs.getString("prenom");
+                String nom = rs.getString("nom");
+                
+                String[] str = new String[2];
+                str[0] = prenom;
+                str[1] = nom;
+                
+                liste.add(str);
+            }
+        
+
+        return liste;
+    }
+    
+    public ArrayList docteurssanspatients() throws SQLException{
+        
+         ResultSet rs;
+         ArrayList<String[]> liste;
+         liste = new ArrayList<>();
+
+ 
+            rs = stmt.executeQuery("SELECT DISTINCT employe.prenom, employe.nom FROM soigne, employe WHERE employe.numero != soigne.no_docteur GROUP BY soigne.no_malade");
+            while ( rs.next() ) {
+                String prenom = rs.getString("prenom");
+                String nom = rs.getString("nom");
+                
+                String[] str = new String[2];
+                str[0] = prenom;
+                str[1] = nom;
+                
+                liste.add(str);
+            }
+        
+
+        return liste;
+    }
+    
+    public ArrayList ratioservices() throws SQLException{
+        
+         ResultSet rs;
+         ResultSet rs2;
+         ArrayList<String[]> liste;
+         liste = new ArrayList<>();
+
+ 
+            rs = stmt.executeQuery("SELECT COUNT(infirmier.numero) as t, service.nom FROM infirmier, service WHERE service.code = infirmier.code_service GROUP BY infirmier.code_service");
+            while ( rs.next() ) {
+                String totalinfirmiers = rs.getString("t");
+                String nom = rs.getString("nom");
+                String rapport = "";
+                
+                rs2 = stmt.executeQuery("SELECT COUNT(hospitalisation.no_malade) as m, service.nom FROM hospitalisation, service WHERE service.code = hospitalisation.code_service GROUP BY hospitalisation.code_service");
+                while ( rs2.next() ) {
+                    
+                    if(rs2.getString("nom") == nom){
+                        rapport = totalinfirmiers+"/"+rs2.getString("m");
+                    }
+                    
+                }
+                
+                
+                String[] str = new String[2];
+                str[0] = nom;
+                str[1] = rapport;
                 
                 liste.add(str);
             }

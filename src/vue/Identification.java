@@ -19,7 +19,7 @@ public class Identification extends javax.swing.JFrame {
      */
     public Identification() {
         initComponents();
-        getContentPane().setBackground(new Color(204,204,255));
+        //getContentPane().setBackground(new Color(204,204,255));
     }
 
     /**
@@ -35,6 +35,7 @@ public class Identification extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -45,6 +46,8 @@ public class Identification extends javax.swing.JFrame {
         jLabel2.setText("Login :");
 
         jTextField1.setText("jTextField1");
+
+        jButton1.setText("Valider");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -60,6 +63,10 @@ public class Identification extends javax.swing.JFrame {
                     .addComponent(jPasswordField1)
                     .addComponent(jTextField1))
                 .addGap(585, 585, 585))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(601, 601, 601)
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -72,7 +79,9 @@ public class Identification extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
-                .addContainerGap(361, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1)
+                .addContainerGap(326, Short.MAX_VALUE))
         );
 
         pack();
@@ -117,6 +126,7 @@ public class Identification extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPasswordField jPasswordField1;

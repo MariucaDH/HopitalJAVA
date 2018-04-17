@@ -18,7 +18,7 @@ public class Recherche extends javax.swing.JFrame {
      */
     public Recherche() {
         initComponents();
-        getContentPane().setBackground(new Color(210,167,232));
+        getContentPane().setBackground(new Color(204,204,255));
     }
 
     /**
@@ -33,11 +33,15 @@ public class Recherche extends javax.swing.JFrame {
         jScrollBar1 = new javax.swing.JScrollBar();
         Requêtes = new javax.swing.JScrollPane();
         jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 0, 204));
 
         jLabel1.setText("Requêtes");
+
+        jButton1.setBackground(new java.awt.Color(236, 108, 112));
+        jButton1.setText("Revenir à l'accueil");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -53,7 +57,11 @@ public class Recherche extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(630, 630, 630)
                         .addComponent(jLabel1)))
-                .addContainerGap(425, Short.MAX_VALUE))
+                .addContainerGap(405, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(35, 35, 35))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -64,7 +72,9 @@ public class Recherche extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Requêtes, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(178, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(35, 35, 35))
         );
 
         pack();
@@ -78,6 +88,7 @@ public class Recherche extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane Requêtes;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollBar jScrollBar1;
     // End of variables declaration//GEN-END:variables

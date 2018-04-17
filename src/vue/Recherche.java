@@ -37,7 +37,6 @@ public class Recherche extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(204, 0, 204));
 
         jLabel1.setText("Requêtes");
 

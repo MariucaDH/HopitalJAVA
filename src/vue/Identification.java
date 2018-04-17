@@ -12,7 +12,8 @@ import java.awt.Color;
  * @author Mariuca
  */
 public class Identification extends javax.swing.JFrame {
-
+    
+      public static Identification i = new Identification();
 
     /**
      * Creates new form Identification
@@ -94,7 +95,10 @@ public class Identification extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-                    new Bienvenue().setVisible(true); // Si on clique sur "Valider", on arrive sur Bienvenue
+     new Bienvenue().setVisible(true);
+     i.setVisible(false);
+     
+// Si on clique sur "Valider", on arrive sur Bienvenue
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -127,8 +131,7 @@ public class Identification extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-
-                new Identification().setVisible(true);
+                i.setVisible(true);
 
             }
         });

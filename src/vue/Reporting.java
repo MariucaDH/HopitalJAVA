@@ -17,7 +17,7 @@ public class Reporting extends javax.swing.JFrame {
      * Creates new form Reporting
      */
     public Reporting() {
-        getContentPane().setBackground(new Color(199,247,250));
+        getContentPane().setBackground(new Color(204,255,204));
         initComponents();
     }
 

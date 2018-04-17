@@ -17,7 +17,7 @@ public class Ajout extends javax.swing.JFrame {
      * Creates new form Ajout
      */
     public Ajout() {
-        getContentPane().setBackground(new Color(252,197,161));
+        getContentPane().setBackground(new Color(255,204,204));
         initComponents();
     }
 

@@ -20,7 +20,7 @@ public class Identification extends javax.swing.JFrame {
      * Creates new form Identification
      */
     public Identification() {
-        getContentPane().setBackground(new Color(241,232,247));
+        getContentPane().setBackground(new Color(204,229,255));
         initComponents();
         //getContentPane().setBackground(new Color(204,204,255));
     }

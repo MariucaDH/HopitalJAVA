@@ -17,6 +17,7 @@ import static vue.Graphique.donneeschart1;
 public class Reporting extends javax.swing.JFrame {
 
     private Graphique G1;
+    private Graphique G2;
     public Reporting() {
         getContentPane().setBackground(new Color(204,255,204));
         initComponents();
@@ -36,10 +37,12 @@ public class Reporting extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 18)); // NOI18N
         jLabel1.setText("Reporting ");
 
         jLabel2.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
@@ -68,10 +71,30 @@ public class Reporting extends javax.swing.JFrame {
             .addGap(0, 317, Short.MAX_VALUE)
         );
 
+        jButton1.setBackground(new java.awt.Color(204, 204, 255));
+        jButton1.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
         jButton1.setText("Graphique 1 : Repartition des patients par service ");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setBackground(new java.awt.Color(204, 204, 255));
+        jButton3.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
+        jButton3.setText("Graphique 3 : Nombre de docteurs par spécialité ");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jButton4.setBackground(new java.awt.Color(204, 204, 255));
+        jButton4.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
+        jButton4.setText("Graphique 2 : Repartition des salaires des infirmières en fonction de leur rotation ");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
             }
         });
 
@@ -94,7 +117,10 @@ public class Reporting extends javax.swing.JFrame {
                 .addGap(30, 30, 30))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(68, 68, 68)
-                .addComponent(jButton1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(171, 171, 171))
@@ -108,12 +134,16 @@ public class Reporting extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(29, 29, 29))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(44, 44, 44)
-                        .addComponent(jButton1)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(42, 42, 42)
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(37, 37, 37)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30))
@@ -135,11 +165,33 @@ public class Reporting extends javax.swing.JFrame {
      ChartPanel chp1 = new ChartPanel(ch1); 
      chp1.setSize(464, 317); 
   chp1.setVisible(true); 
+    jPanel1.removeAll();
+        jPanel1.revalidate();
         jPanel1.add(chp1);
         jPanel1.setSize(463,316);
+       
        jPanel1.setVisible(true);
  
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+
+G2 = new Graphique ("Chart 2"); 
+JFreeChart ch2; 
+ch2 = G2.createChart2(G2.donneeschart2());
+ChartPanel chp2 = new ChartPanel(ch2); 
+chp2.setSize(464,317); 
+chp2.setVisible(true);
+ jPanel1.removeAll();
+        jPanel1.revalidate();
+jPanel1.add(chp2);
+ jPanel1.setSize(463,316);
+       jPanel1.setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
    
     public static void main(String args[]) {
@@ -177,6 +229,8 @@ public class Reporting extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

@@ -8,40 +8,100 @@ package vue;
 
 import java.sql.*;
 import java.util.ArrayList;
-
+import javax.swing.*;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.data.general.DefaultPieDataset;
+import org.jfree.data.general.PieDataset;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.data.general.DefaultPieDataset;
+import org.jfree.data.general.PieDataset;
+import org.jfree.ui.ApplicationFrame;
+import org.jfree.ui.RefineryUtilities;
 /**
  *
  * @author Sosoww
  */
-public class Chart {
+public class Chart extends ApplicationFrame{
     
-    private Statement stmt;
-    public ArrayList patientsgueris () throws SQLException 
+     private static Statement stmt;
+    public static ArrayList patientsgueris () throws SQLException 
     {
-        
+       
         ResultSet rs;
         
-         ArrayList<String[]> liste;
+         ArrayList<ArrayList> liste;
          liste = new ArrayList<>();
 
  
             rs = stmt.executeQuery("SELECT code_service, COUNT( no_malade ) FROM hospitalisation NATURAL JOIN malade GROUP BY code_service") ;
             while ( rs.next() ) {
-                String code_service = rs.getString("Code Service");
-                String no_malade = rs.getString("Numéro malade");
+                int code_service = rs.getInt("Code Service");
+                int no_malade = rs.getInt("Nb malade");
                 
-                String[] str = new String[4];
-                str[0] = code_service;
-                str[1] = no_malade;
+                ArrayList str;
+                str = new ArrayList<>();
+                str.add(code_service); //String
+                str.add(no_malade); //int
                 
                 liste.add(str);
-                System.out.println(no_malade);
+              
             }
-        
-
+      
         return liste;
     }
     
-    //private JFreeChart
-    
+      public static JPanel panel() throws SQLException {
+      JFreeChart chart = createChart(createDataset( ) );  
+      return new ChartPanel( chart ); 
+   }
+      
+    public Chart( String title ) throws SQLException {
+      super(title); 
+      setContentPane(panel());
+   }
+   
+   private static PieDataset createDataset( ) throws SQLException {
+       
+     
+           
+      DefaultPieDataset dataset = new DefaultPieDataset( );
+      for (int i=0; i<patientsgueris().size(); i++)
+      {
+          
+          dataset.setValue( "CAR", 10);
+          dataset.setValue( "REA", 60);
+          dataset.setValue("CHG", 30);
+      }
+      return dataset;         
+   }
+   
+   private static JFreeChart createChart( PieDataset dataset ) {
+      JFreeChart chart = ChartFactory.createPieChart(      
+         "Repartition des patients par spécialité",   // chart title 
+         dataset,          // data    
+         true,             // include legend   
+         true, 
+         false);
+
+      return chart;
+   }
+   
+ 
+
+   public static void main( String[ ] args ) throws SQLException {
+      Chart demo = new Chart( "Repartition des patients" );  
+      demo.setSize( 560 , 367 );    
+     // RefineryUtilities.centerFrameOnScreen( demo );    
+      demo.setVisible( true ); 
+   }
 }
+    
+   
+    
+   
+    
+

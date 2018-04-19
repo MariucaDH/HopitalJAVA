@@ -78,6 +78,11 @@ public class MiseAJour extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        jList2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jList2MouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(jList2);
 
         jList1.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
@@ -85,6 +90,11 @@ public class MiseAJour extends javax.swing.JFrame {
             String[] strings = { "Catégorie de suppression :", "Chambre", "Docteur", "Employé", "Hospitalisation", "Infirmier", "Malade", "Service", "Soigné" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
+        });
+        jList1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jList1MouseClicked(evt);
+            }
         });
         jScrollPane1.setViewportView(jList1);
 
@@ -149,7 +159,8 @@ public class MiseAJour extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
     jScrollPane1.setVisible(false);
     jList2.setVisible(true);
-    jScrollPane2.setVisible(true);        
+    jScrollPane2.setVisible(true);
+    
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -158,6 +169,14 @@ public class MiseAJour extends javax.swing.JFrame {
     jScrollPane1.setVisible(true);
     jList1.setVisible(true);    
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jList2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList2MouseClicked
+    new Ajout().setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jList2MouseClicked
+
+    private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
+    new Suppression().setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jList1MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

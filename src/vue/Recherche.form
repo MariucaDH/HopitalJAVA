@@ -236,6 +236,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="R7. Nb total m&#xe9;decins &amp; nb sp&#xe9;s m&#xe9;dicales pr chaque malade soign&#xe9; par + de 3 m&#xe9;decins."/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton9ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButton10">
       <Properties>
@@ -261,6 +264,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="R9. Pr&#xe9;nom et nom des docteurs ayant au moins un malade hospitalis&#xe9;. "/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton11ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButton12">
       <Properties>
@@ -272,6 +278,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="R10. Pr&#xe9;nom et nom des docteurs n&#x2019;ayant aucun malade hospitalis&#xe9;. "/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton12ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButton13">
       <Properties>
@@ -283,6 +292,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="R11. Nombre de patients gu&#xe9;ris, par m&#xe9;decin."/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton13ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButton14">
       <Properties>
@@ -294,6 +306,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="R12. Mutuelles des patients, par m&#xe9;decin."/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton14ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButton15">
       <Properties>
@@ -305,6 +320,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="R13. Fiche d&#x2019;identit&#xe9; d&#x2019;un patient. "/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton15ActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

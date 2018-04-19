@@ -19,10 +19,8 @@ public class Ajout extends javax.swing.JFrame {
     public Ajout() {
         getContentPane().setBackground(new Color(255,204,204));
         initComponents();
-        jScrollPane2.removeAll();
-        jScrollPane1.removeAll();
-        jScrollPane2.revalidate();
-        jScrollPane1.revalidate();
+        jList1.setVisible(false);
+        jList2.setVisible(false);
     }
 
     
@@ -155,14 +153,16 @@ public class Ajout extends javax.swing.JFrame {
 
     
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-    jScrollPane1.setVisible(false); 
+    jScrollPane1.setVisible(false);
+    jList2.setVisible(true);
     jScrollPane2.setVisible(true);        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
     jScrollPane2.setVisible(false);
-    jScrollPane1.setVisible(true);    
+    jScrollPane1.setVisible(true);
+    jList1.setVisible(true);    
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

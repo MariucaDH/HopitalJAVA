@@ -8,7 +8,9 @@ package vue;
 
 
 
+import java.awt.Color;
 import org.jfree.chart.*;
+import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.category.DefaultCategoryDataset;
@@ -24,15 +26,31 @@ public class Graphique extends ApplicationFrame {
       super(titre); 
       //setContentPane(createDemoPanel());
    }
-   // CHART 1 : REPARTITION DES PATIENTS PAR SERVICE 
-   //CHART 2 : NOMBRE DE DOCTEUR PAR SPECIALITE 
+   // CHART 1 : REPARTITION DES PATIENTS PAR SERVICE : camembert
+   //CHART 2 : NOMBRE DE DOCTEUR PAR SPECIALITE : histogramme double
+   //CHART 3 : REPARTITION DES SALAIRES EN FN DE LA ROTATION : histogramme 
+   
    
    // 1. On rentre les données 
    public static PieDataset donneeschart1( ) {
       DefaultPieDataset dataset = new DefaultPieDataset( );
-      dataset.setValue( "CARDIOLOGIE" , new Double( 20 ) );  
+      dataset.setValue( "CARDIO" , new Double( 20 ) );  
       dataset.setValue( "CHIRURGIE" , new Double( 40 ) );   
-      dataset.setValue( "REANIMATION" , new Double( 40 ) );     
+      dataset.setValue( "REA" , new Double( 40 ) );     
+      return dataset;         
+   }
+   
+     public static PieDataset donneeschart4( ) {
+      DefaultPieDataset dataset = new DefaultPieDataset( );
+      dataset.setValue( "MNAM" , new Double( 20 ) );  
+      dataset.setValue( "LMDE" , new Double( 40 ) );   
+      dataset.setValue( "MNH" , new Double( 40 ) );
+      dataset.setValue( "CNAMTS" , new Double( 20 ) );  
+      dataset.setValue( "AG2R" , new Double( 40 ) );   
+      dataset.setValue( "CCVRP" , new Double( 40 ) ); 
+      dataset.setValue( "MGSP" , new Double( 20 ) );  
+      dataset.setValue( "MAS" , new Double( 40 ) );   
+      dataset.setValue( "MNFTC" , new Double( 40 ) );    
       return dataset;         
    }
    
@@ -49,14 +67,37 @@ public class Graphique extends ApplicationFrame {
   return dataset;
   }          
                
+   
+   public static CategoryDataset donneeschart3(){
+       
+       DefaultCategoryDataset dataset = new DefaultCategoryDataset(); 
+       
+       dataset.addValue(2, "Nombre de docteurs", "Cardiologie");
+       dataset.addValue(3, "Nombre de docteurs", "Pneumatologie");
+       dataset.addValue(5, "Nombre de docteurs", "Traumatologie");
+       dataset.addValue(1, "Nombre de docteurs", "Anesthésiste");
+       dataset.addValue(4, "Nombre de docteurs", "Orthopédiste");
+       return dataset; 
+   }
                
+   public static JFreeChart createChart3(CategoryDataset dataset)
+   {
+       JFreeChart chart = ChartFactory.createBarChart("Nombre de docteurs par spécialité", "Spécialités", "Nombre de docteurs", dataset, PlotOrientation.HORIZONTAL, true, true, false);
+       chart.setBackgroundPaint(new Color (204,255,204));
+       CategoryPlot p = chart.getCategoryPlot(); 
+       p.setRangeGridlinePaint(new Color (255,204,204)); 
+       
+       return chart; 
+   }
   public static JFreeChart createChart2(CategoryDataset dataset) {
 
    JFreeChart chart = ChartFactory.createBarChart(
   "Repartition du salaire des infirmières en fonction de leur rotation", "Salaire", "Nombre d'infirmières", dataset,
   PlotOrientation.VERTICAL, true, true, false);
+   chart.setBackgroundPaint(new Color (204,255,204));
   return chart;
   }
+  
                
    
    //2. On crée le camembert 
@@ -67,6 +108,19 @@ public class Graphique extends ApplicationFrame {
          true,             //Legendes   
          true, 
          false);
+ch.setBackgroundPaint(new Color (204,255,204));
+
+      return ch;
+   }
+   
+      public static JFreeChart createChart4(PieDataset dataset) {
+      JFreeChart ch = ChartFactory.createPieChart(      
+         "Repartition des patients par mutuelle",   //titre 
+         dataset,          //Donnees   
+         true,             //Legendes   
+         true, 
+         false);
+ch.setBackgroundPaint(new Color (204,255,204));
 
       return ch;
    }

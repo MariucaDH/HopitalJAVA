@@ -343,6 +343,7 @@ public class Recherche extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton8ActionPerformed
 
+    
     /**
      * @param args the command line arguments
      */

@@ -5,7 +5,15 @@
  */
 package vue;
 
+import controleur.modèle.Requetes;
 import java.awt.Color;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 
 /**
  *
@@ -14,14 +22,27 @@ import java.awt.Color;
 public class Recherche extends javax.swing.JFrame {
 
     public static Recherche r = new Recherche();
+    private Requetes req;
     /**
      * Creates new form Recherche
      */
     public Recherche() {
         initComponents();
         getContentPane().setBackground(new Color(204,204,255));
+        
+        try {
+            initreq();
+        } catch (SQLException ex) {
+            Logger.getLogger(Recherche.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Recherche.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
+    public void initreq() throws SQLException, ClassNotFoundException {
+        this.req = new Requetes("local");  
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -69,10 +90,20 @@ public class Recherche extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(204, 204, 238));
         jButton2.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
         jButton2.setText("R1. Prénom et nom des malades affiliés à la mutuelle « MAAF ».");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton4.setBackground(new java.awt.Color(204, 204, 238));
         jButton4.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
         jButton4.setText("R2. Prénom et nom des infirmier(ères) travaillant pendant la rotation de nuit. ");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setBackground(new java.awt.Color(204, 204, 238));
         jButton5.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
@@ -209,6 +240,33 @@ public class Recherche extends javax.swing.JFrame {
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        Object[][] result;
+        try {
+            result = this.req.usermaaf();
+             Object headers[] = { "Prenom", "Nom" };
+            this.Requêtes.getViewport().removeAll();
+            JTable table = new JTable(result, headers);
+            this.Requêtes.getViewport().add (table);
+        } catch (SQLException ex) {
+            Logger.getLogger(Recherche.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        Object[][] result;
+        try {
+            result = this.req.infirmiernuit();
+             Object headers[] = { "Prenom", "Nom" };
+            this.Requêtes.getViewport().removeAll();
+            JTable table = new JTable(result, headers);
+            this.Requêtes.getViewport().add (table);
+        } catch (SQLException ex) {
+            Logger.getLogger(Recherche.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments

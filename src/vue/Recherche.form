@@ -183,6 +183,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="R3. Nom et b&#xe2;timent d&#x2019;un service &amp; pr&#xe9;nom, nom et sp&#xe9;cialit&#xe9; de son directeur. "/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButton6">
       <Properties>
@@ -205,6 +208,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="R5. Moyenne des salaires des infirmiers(&#xe8;res) par service."/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton7ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButton8">
       <Properties>
@@ -216,6 +222,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="R6. Nombre moyen de lits par chambre pour chaque service du b&#xe2;timent &#xab; A &#xbb; de l&#x2019;h&#xf4;pital."/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton8ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButton9">
       <Properties>

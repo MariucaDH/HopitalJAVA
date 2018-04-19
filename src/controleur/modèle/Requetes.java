@@ -239,6 +239,8 @@ public class Requetes {
         return liste;
     }
     
+    
+    //Ratio service
     public Object[][] ratioservices() throws SQLException{
         
          ResultSet rs;
@@ -278,5 +280,88 @@ public class Requetes {
     }
     
     
-    
+     //------------------------------------------------//
+    //R14 : Nombre de medecins par spécialité :
+    ///->>> POUR LE GRAPHIQUE 4 
+     public Object[][] medecinparspe() throws SQLException{
+        
+         ResultSet rs;
+         liste = new Object[100][10];
+
+ 
+            rs = stmt.executeQuery("SELECT specialite, COUNT( DISTINCT numero ) FROM docteur GROUP BY specialite");
+            int i = 0;
+            while ( rs.next() ) {
+                String spe = rs.getString("Spécialité");
+                String nbdoc = rs.getString("Nombre de docteurs");
+                
+                Object[] str = new Object[] { spe, nbdoc};
+                
+                
+                liste[i] = str;
+                
+                i++;
+            }
+        
+
+        return liste;
+    }
+     
+     
+     //R11 : NB de PATIENTS guéris par médecin (numero docteur)
+     
+       public Object[][] nbpatientsgueris() throws SQLException{ //nbpatientsgueris
+        
+         ResultSet rs;
+         liste = new Object[100][10];
+
+ 
+            rs = stmt.executeQuery("SELECT no_docteur, COUNT( no_malade ) FROM soigne GROUP BY no_docteur");
+            int i = 0;
+            while ( rs.next() ) {
+                String numdoc = rs.getString("Numero du docteur");
+                String nbsoigne = rs.getString("Nombre de patients soignés");
+                
+                Object[] str = new Object[] {numdoc, nbsoigne};
+                
+                
+                liste[i] = str;
+               
+                i++;
+            }
+        
+
+        return liste;
+    }
+     
+       //R15 : NB patients par service 
+       //GRAPHIQUE 1
+        public Object[][] patientsservice() throws SQLException{ //patientsservice
+        
+         ResultSet rs;
+         liste = new Object[100][10];
+
+ 
+            rs = stmt.executeQuery("SELECT code_service, COUNT( DISTINCT no_malade )  FROM hospitalisation GROUP BY code_service");
+            int i = 0;
+            while ( rs.next() ) {
+                String codeservice = rs.getString("Nom du service");
+                String nbmalade = rs.getString("Nombre de patients");
+                
+                Object[] str = new Object[] {codeservice, nbmalade};
+                
+                
+                liste[i] = str;
+                
+                i++;
+            }
+        
+
+        return liste;
+    }
+       
+   
+        
+        
+        
 }

@@ -26,10 +26,11 @@ public class Graphique extends ApplicationFrame {
       super(titre); 
       //setContentPane(createDemoPanel());
    }
-   // CHART 1 : REPARTITION DES PATIENTS PAR SERVICE : camembert
-   //CHART 2 : NOMBRE DE DOCTEUR PAR SPECIALITE : histogramme double
-   //CHART 3 : REPARTITION DES SALAIRES EN FN DE LA ROTATION : histogramme 
+ 
    
+   ///GRAPHIQUE 1 : PATIENTS PAR SERVICE 
+   
+   //Requete 15 : patientsservice(); 
    
    // 1. On rentre les données 
    public static PieDataset donneeschart1( ) {
@@ -39,21 +40,21 @@ public class Graphique extends ApplicationFrame {
       dataset.setValue( "REA" , new Double( 40 ) );     
       return dataset;         
    }
-   
-     public static PieDataset donneeschart4( ) {
-      DefaultPieDataset dataset = new DefaultPieDataset( );
-      dataset.setValue( "MNAM" , new Double( 20 ) );  
-      dataset.setValue( "LMDE" , new Double( 40 ) );   
-      dataset.setValue( "MNH" , new Double( 40 ) );
-      dataset.setValue( "CNAMTS" , new Double( 20 ) );  
-      dataset.setValue( "AG2R" , new Double( 40 ) );   
-      dataset.setValue( "CCVRP" , new Double( 40 ) ); 
-      dataset.setValue( "MGSP" , new Double( 20 ) );  
-      dataset.setValue( "MAS" , new Double( 40 ) );   
-      dataset.setValue( "MNFTC" , new Double( 40 ) );    
-      return dataset;         
+    
+   //2. On crée le camembert 
+   public static JFreeChart createChart1(PieDataset dataset) {
+      JFreeChart ch = ChartFactory.createPieChart(      
+         "Repartition des patients par service",   //titre 
+         dataset,          //Donnees   
+         true,             //Legendes   
+         true, 
+         false);
+ch.setBackgroundPaint(new Color (204,255,204));
+
+      return ch;
    }
    
+   ///GRAPHIQUE 2 : SALAIRE INFIRIMIERES JOUR/NUIT : 
    public static CategoryDataset donneeschart2(){
        
        DefaultCategoryDataset dataset = new DefaultCategoryDataset(); 
@@ -65,9 +66,18 @@ public class Graphique extends ApplicationFrame {
     dataset.addValue(4, "Nuit", "1500€-1800€"); 
     dataset.addValue(5, "Nuit", "1800€-2100€"); 
   return dataset;
-  }          
-               
+  }   
    
+     public static JFreeChart createChart2(CategoryDataset dataset) {
+
+   JFreeChart chart = ChartFactory.createBarChart(
+  "Repartition du salaire des infirmières en fonction de leur rotation", "Salaire", "Nombre d'infirmières", dataset,
+  PlotOrientation.VERTICAL, true, true, false);
+   chart.setBackgroundPaint(new Color (204,255,204));
+  return chart;
+  }
+               
+   ///GRAPHIQUE 3 : DOcteurs par spécialité 
    public static CategoryDataset donneeschart3(){
        
        DefaultCategoryDataset dataset = new DefaultCategoryDataset(); 
@@ -89,29 +99,10 @@ public class Graphique extends ApplicationFrame {
        
        return chart; 
    }
-  public static JFreeChart createChart2(CategoryDataset dataset) {
 
-   JFreeChart chart = ChartFactory.createBarChart(
-  "Repartition du salaire des infirmières en fonction de leur rotation", "Salaire", "Nombre d'infirmières", dataset,
-  PlotOrientation.VERTICAL, true, true, false);
-   chart.setBackgroundPaint(new Color (204,255,204));
-  return chart;
-  }
-  
-               
+
    
-   //2. On crée le camembert 
-   public static JFreeChart createChart1(PieDataset dataset) {
-      JFreeChart ch = ChartFactory.createPieChart(      
-         "Repartition des patients par service",   //titre 
-         dataset,          //Donnees   
-         true,             //Legendes   
-         true, 
-         false);
-ch.setBackgroundPaint(new Color (204,255,204));
-
-      return ch;
-   }
+   ///GRAPHIQUE 4 : MUTUELLE DES PATIENTS
    
       public static JFreeChart createChart4(PieDataset dataset) {
       JFreeChart ch = ChartFactory.createPieChart(      
@@ -125,6 +116,21 @@ ch.setBackgroundPaint(new Color (204,255,204));
       return ch;
    }
 
+       
+     public static PieDataset donneeschart4( ) {
+      DefaultPieDataset dataset = new DefaultPieDataset( );
+      dataset.setValue( "MNAM" , new Double( 20 ) );  
+      dataset.setValue( "LMDE" , new Double( 40 ) );   
+      dataset.setValue( "MNH" , new Double( 40 ) );
+      dataset.setValue( "CNAMTS" , new Double( 20 ) );  
+      dataset.setValue( "AG2R" , new Double( 40 ) );   
+      dataset.setValue( "CCVRP" , new Double( 40 ) ); 
+      dataset.setValue( "MGSP" , new Double( 20 ) );  
+      dataset.setValue( "MAS" , new Double( 40 ) );   
+      dataset.setValue( "MNFTC" , new Double( 40 ) );    
+      return dataset;         
+   }
+   
    
 }
     

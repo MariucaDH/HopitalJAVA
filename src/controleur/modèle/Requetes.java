@@ -19,6 +19,7 @@ public class Requetes {
     private boolean is_distant = false;
     private Connexion bdd;
     private Statement stmt;
+    private Object[][] liste;
     
     
     public Requetes(){
@@ -37,24 +38,24 @@ public class Requetes {
     }
     
     
-    public ArrayList usermaaf() throws SQLException{
+    public Object[][] usermaaf() throws SQLException{
         
          ResultSet rs;
-         ArrayList<String[]> liste;
-         liste = new ArrayList<>();
+         liste = new Object[100][10];
 
  
             rs = stmt.executeQuery("SELECT nom, prenom FROM malade WHERE mutuelle = 'MAAF'");
+            int i = 0;
             while ( rs.next() ) {
                 String nom = rs.getString("nom");
                 String prenom = rs.getString("prenom");
                 
-                String[] str = new String[4];
-                str[0] = prenom;
-                str[1] = nom;
+                Object[] str = new Object[] { prenom, nom};
                 
-                liste.add(str);
-                System.out.println(prenom);
+                
+                liste[i] = str;
+                //System.out.println(prenom);
+                i++;
             }
         
 
@@ -62,38 +63,38 @@ public class Requetes {
     }
     
     
-    public ArrayList infirmiernuit() throws SQLException{
+    public Object[][] infirmiernuit() throws SQLException{
         
          ResultSet rs;
-         ArrayList<String[]> liste;
-         liste = new ArrayList<>();
+         liste = new Object[100][10];
 
  
             rs = stmt.executeQuery("SELECT employe.nom as n, employe.prenom as p FROM employe,infirmier  WHERE infirmier.rotation = 'NUIT' AND employe.numero = infirmier.numero");
+            int i = 0;
             while ( rs.next() ) {
                 String nom = rs.getString("n");
                 String prenom = rs.getString("p");
                 
-                String[] str = new String[4];
-                str[0] = prenom;
-                str[1] = nom;
+                Object[] str = new Object[] { prenom, nom};
                 
-                liste.add(str);
-                System.out.println(prenom);
+                
+                liste[i] = str;
+                //System.out.println(prenom);
+                i++;
             }
         
 
         return liste;
     }
     
-    public ArrayList services() throws SQLException{
+    public Object[][] services() throws SQLException{
         
          ResultSet rs;
-         ArrayList<String[]> liste;
-         liste = new ArrayList<>();
+         liste = new Object[100][10];
 
  
             rs = stmt.executeQuery("SELECT employe.nom as n, employe.prenom as p, service.nom as sn, service.batiment as ba FROM employe, service  WHERE employe.numero = service.directeur ORDER BY  service.nom ASC");
+            int i = 0;
             while ( rs.next() ) {
                 
                 String service = rs.getString("sn");
@@ -102,14 +103,13 @@ public class Requetes {
                 String nom = rs.getString("n");
                 String prenom = rs.getString("p");
                 
-                String[] str = new String[4];
-                str[0] = service;
-                str[1] = batiment;
-                str[2] = prenom;
-                str[3] = nom;
                 
-                liste.add(str);
-                System.out.println(str[2]);
+                Object[] str = new Object[] { service, batiment, prenom, nom};
+                
+                
+                liste[i] = str;
+                //System.out.println(prenom);
+                i++;
             }
         
 
@@ -118,130 +118,136 @@ public class Requetes {
     
     
     
-    public ArrayList moyennesalaires() throws SQLException{
+    public Object[][] moyennesalaires() throws SQLException{
         
          ResultSet rs;
-         ArrayList<String[]> liste;
-         liste = new ArrayList<>();
+         liste = new Object[100][10];
 
  
             rs = stmt.executeQuery("SELECT code_service, AVG(salaire) as s FROM infirmier WHERE GROUP BY code_service");
+            int i = 0;
             while ( rs.next() ) {
                 String service = rs.getString("code_service");
                 String salaire = rs.getString("s");
                 
-                String[] str = new String[2];
-                str[0] = service;
-                str[1] = salaire;
+                Object[] str = new Object[] { service, salaire};
                 
-                liste.add(str);
+                
+                liste[i] = str;
+                //System.out.println(prenom);
+                i++;
             }
         
 
         return liste;
     }
     
-    public ArrayList litbatimentA() throws SQLException{
+    public Object[][] litbatimentA() throws SQLException{
         
          ResultSet rs;
-         ArrayList<String[]> liste;
-         liste = new ArrayList<>();
+         liste = new Object[100][10];
 
  
             rs = stmt.executeQuery("SELECT ROUND(AVG(chambre.nb_lits), 0) as lits, service.code as s FROM service, chambre WHERE service.batiment = 'A' AND service.code = chambre.code_service GROUP BY service.code");
+            int i = 0;
             while ( rs.next() ) {
                 String service = rs.getString("s");
                 String lits = rs.getString("lits");
                 
-                String[] str = new String[2];
-                str[0] = service;
-                str[1] = lits;
+                Object[] str = new Object[] { service, lits};
                 
-                liste.add(str);
+                
+                liste[i] = str;
+                //System.out.println(prenom);
+                i++;
+              
             }
         
 
         return liste;
     }
     
-    public ArrayList malades3fois() throws SQLException{
+    public Object[][] malades3fois() throws SQLException{
         
          ResultSet rs;
-         ArrayList<String[]> liste;
-         liste = new ArrayList<>();
+         liste = new Object[100][10];
 
  
             rs = stmt.executeQuery("SELECT ROUND(AVG(chambre.nb_lits), 0) as lits, service.code as s FROM service, chambre WHERE service.batiment = 'A' AND service.code = chambre.code_service GROUP BY service.code");
+            int i = 0;
             while ( rs.next() ) {
                 String service = rs.getString("s");
                 String lits = rs.getString("lits");
                 
-                String[] str = new String[2];
-                str[0] = service;
-                str[1] = lits;
+                Object[] str = new Object[] { service, lits};
                 
-                liste.add(str);
+                
+                liste[i] = str;
+                //System.out.println(prenom);
+                i++;
             }
         
 
         return liste;
     }
     
-    public ArrayList docteursavecpatients() throws SQLException{
+    public Object[][] docteursavecpatients() throws SQLException{
         
          ResultSet rs;
-         ArrayList<String[]> liste;
-         liste = new ArrayList<>();
+         liste = new Object[100][10];
 
  
             rs = stmt.executeQuery("SELECT DISTINCT employe.prenom, employe.nom FROM soigne, employe WHERE employe.numero = soigne.no_docteur GROUP BY soigne.no_malade");
+            int i = 0;
             while ( rs.next() ) {
                 String prenom = rs.getString("prenom");
                 String nom = rs.getString("nom");
                 
-                String[] str = new String[2];
-                str[0] = prenom;
-                str[1] = nom;
+                Object[] str = new Object[] { prenom, nom};
                 
-                liste.add(str);
+                
+                liste[i] = str;
+                //System.out.println(prenom);
+                i++;
             }
         
 
         return liste;
     }
     
-    public ArrayList docteurssanspatients() throws SQLException{
+    public Object[][] docteurssanspatients() throws SQLException{
         
          ResultSet rs;
-         ArrayList<String[]> liste;
-         liste = new ArrayList<>();
+         liste = new Object[100][10];
 
  
             rs = stmt.executeQuery("SELECT DISTINCT employe.prenom, employe.nom FROM soigne, employe WHERE employe.numero != soigne.no_docteur GROUP BY soigne.no_malade");
+            int i = 0;
             while ( rs.next() ) {
                 String prenom = rs.getString("prenom");
                 String nom = rs.getString("nom");
                 
-                String[] str = new String[2];
-                str[0] = prenom;
-                str[1] = nom;
+                Object[] str = new Object[] {prenom, nom};
                 
-                liste.add(str);
+                
+                liste[i] = str;
+                //System.out.println(prenom);
+                i++;
             }
         
 
         return liste;
     }
     
-    public ArrayList ratioservices() throws SQLException{
+    public Object[][] ratioservices() throws SQLException{
         
          ResultSet rs;
          ResultSet rs2;
-         ArrayList<String[]> liste;
-         liste = new ArrayList<>();
+        liste = new Object[100][10];
 
  
             rs = stmt.executeQuery("SELECT COUNT(infirmier.numero) as t, service.nom FROM infirmier, service WHERE service.code = infirmier.code_service GROUP BY infirmier.code_service");
+            int i = 0;
             while ( rs.next() ) {
                 String totalinfirmiers = rs.getString("t");
                 String nom = rs.getString("nom");
@@ -257,11 +263,14 @@ public class Requetes {
                 }
                 
                 
-                String[] str = new String[2];
-                str[0] = nom;
-                str[1] = rapport;
+                Object[] str = new Object[] {nom, rapport};
                 
-                liste.add(str);
+                
+                liste[i] = str;
+                //System.out.println(prenom);
+                i++;
+                
+   
             }
         
 

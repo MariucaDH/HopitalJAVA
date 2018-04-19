@@ -13,7 +13,7 @@ import java.awt.Color;
  */
 public class Bienvenue extends javax.swing.JFrame {
 
-    public boolean x;
+    public boolean x = true;
     /**
      * Creates new form Bienvenue
      */
@@ -209,7 +209,7 @@ public class Bienvenue extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-    new Recherche().setVisible(true);  //Quand on clique sur Recherhce, Recherche s'ouvre
+    new Recherche(x).setVisible(true);  //Quand on clique sur Recherhce, Recherche s'ouvre
     this.setVisible(false); //Et le menu accueil se ferme
     }//GEN-LAST:event_jButton3ActionPerformed
 

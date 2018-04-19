@@ -221,7 +221,7 @@ jPanel1.add(chp2);
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Reporting().setVisible(true);
+                new Identification().setVisible(true);
             }
         });
     }

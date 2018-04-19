@@ -5,7 +5,11 @@
  */
 package vue;
 
+import controleur.modèle.Requetes;
 import java.awt.Color;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import static vue.Graphique.createChart1;
@@ -20,8 +24,26 @@ public class Reporting extends javax.swing.JFrame {
     private Graphique G2;
     private Graphique G3; 
     private Graphique G4;
+    private Requetes req;
     
-    public Reporting() {
+    public Reporting(boolean x) {
+         if(x == true){
+             try {  
+                 this.req = new Requetes("local");
+             } catch (SQLException ex) {
+                 Logger.getLogger(Reporting.class.getName()).log(Level.SEVERE, null, ex);
+             } catch (ClassNotFoundException ex) {
+                 Logger.getLogger(Reporting.class.getName()).log(Level.SEVERE, null, ex);
+             }
+        } else {
+             try {  
+                 this.req = new Requetes("ece");
+             } catch (SQLException ex) {
+                 Logger.getLogger(Reporting.class.getName()).log(Level.SEVERE, null, ex);
+             } catch (ClassNotFoundException ex) {
+                 Logger.getLogger(Reporting.class.getName()).log(Level.SEVERE, null, ex);
+             }
+        }
         getContentPane().setBackground(new Color(204,255,204));
         initComponents();
     }

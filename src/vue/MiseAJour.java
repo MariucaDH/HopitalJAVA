@@ -5,7 +5,11 @@
  */
 package vue;
 
+import controleur.modèle.Requetes;
 import java.awt.Color;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -16,7 +20,30 @@ public class MiseAJour extends javax.swing.JFrame {
     /**
      * Creates new form Ajout
      */
-    public MiseAJour() {
+    
+    private Requetes req;
+    
+    
+    public MiseAJour(boolean x) {
+        
+        if(x == true){
+            try {  
+                this.req = new Requetes("local");
+            } catch (SQLException ex) {
+                Logger.getLogger(MiseAJour.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(MiseAJour.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else {
+            try {  
+                this.req = new Requetes("ece");
+            } catch (SQLException ex) {
+                Logger.getLogger(MiseAJour.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(MiseAJour.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
         getContentPane().setBackground(new Color(255,204,204));
         initComponents();
         jList1.setVisible(false);

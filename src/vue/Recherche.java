@@ -31,7 +31,7 @@ public class Recherche extends javax.swing.JFrame {
         getContentPane().setBackground(new Color(204,204,255));
         
         try {
-            initreq();
+            initreq(true);
         } catch (SQLException ex) {
             Logger.getLogger(Recherche.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
@@ -39,9 +39,29 @@ public class Recherche extends javax.swing.JFrame {
         }
 
     }
+    
+    public Recherche(boolean local) {
+        
+        initComponents();
+        getContentPane().setBackground(new Color(204,204,255));
+        
+        
+        try {
+            initreq(local);
+        } catch (SQLException ex) {
+            Logger.getLogger(Recherche.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Recherche.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
-    public void initreq() throws SQLException, ClassNotFoundException {
-        this.req = new Requetes("local");  
+    public void initreq(boolean local) throws SQLException, ClassNotFoundException {
+        if(local == true){
+            this.req = new Requetes("local");  
+        } else {
+            this.req = new Requetes("ece");  
+        }
+        
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -108,6 +128,11 @@ public class Recherche extends javax.swing.JFrame {
         jButton5.setBackground(new java.awt.Color(204, 204, 238));
         jButton5.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
         jButton5.setText("R3. Nom et bâtiment d’un service & prénom, nom et spécialité de son directeur. ");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setBackground(new java.awt.Color(204, 204, 238));
         jButton6.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
@@ -116,10 +141,20 @@ public class Recherche extends javax.swing.JFrame {
         jButton7.setBackground(new java.awt.Color(204, 204, 238));
         jButton7.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
         jButton7.setText("R5. Moyenne des salaires des infirmiers(ères) par service.");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         jButton8.setBackground(new java.awt.Color(204, 204, 238));
         jButton8.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
         jButton8.setText("R6. Nombre moyen de lits par chambre pour chaque service du bâtiment « A » de l’hôpital.");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         jButton9.setBackground(new java.awt.Color(204, 204, 238));
         jButton9.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
@@ -267,6 +302,46 @@ public class Recherche extends javax.swing.JFrame {
             Logger.getLogger(Recherche.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        Object[][] result;
+        try {
+            result = this.req.services();
+             Object headers[] = { "Service", "Batiment", "Prenom", "Nom du directeur" };
+            this.Requêtes.getViewport().removeAll();
+            JTable table = new JTable(result, headers);
+            this.Requêtes.getViewport().add (table);
+        } catch (SQLException ex) {
+            Logger.getLogger(Recherche.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+       Object[][] result;
+        try {
+            result = this.req.moyennesalaires();
+             Object headers[] = { "Services", "Salaires"};
+            this.Requêtes.getViewport().removeAll();
+            JTable table = new JTable(result, headers);
+            this.Requêtes.getViewport().add (table);
+        } catch (SQLException ex) {
+            Logger.getLogger(Recherche.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        Object[][] result;
+        try {
+            result = this.req.litbatimentA();
+             Object headers[] = { "Services", "Salaires"};
+            this.Requêtes.getViewport().removeAll();
+            JTable table = new JTable(result, headers);
+            this.Requêtes.getViewport().add (table);
+        } catch (SQLException ex) {
+            Logger.getLogger(Recherche.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments

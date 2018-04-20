@@ -171,6 +171,7 @@ public class Identification extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 i.setVisible(true);
+                
 
             }
         });

@@ -15,6 +15,8 @@ public class Identification extends javax.swing.JFrame {
     
       public static Identification i = new Identification();
       public static Bienvenue b = new Bienvenue();
+      public String l = "jbk"; 
+      public String p = "hype"; 
 
     /**
      * Creates new form Identification
@@ -62,6 +64,11 @@ public class Identification extends javax.swing.JFrame {
         jTextField1.setText("jbk");
         jTextField1.setToolTipText("");
         jTextField1.setActionCommand("<Not Set>");
+        jTextField1.addContainerListener(new java.awt.event.ContainerAdapter() {
+            public void componentAdded(java.awt.event.ContainerEvent evt) {
+                jTextField1ComponentAdded(evt);
+            }
+        });
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -133,12 +140,17 @@ public class Identification extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
+
+    //On récupère la valeur login entrée par l'utilisateur et on la compare à une autre valeur ?
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
-        // TODO add your handling code here:
+        // Same for password
     }//GEN-LAST:event_jPasswordField1ActionPerformed
+
+    private void jTextField1ComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_jTextField1ComponentAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ComponentAdded
 
     /**
      * @param args the command line arguments
@@ -171,6 +183,7 @@ public class Identification extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 i.setVisible(true);
+                
 
             }
         });

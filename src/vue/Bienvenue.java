@@ -199,12 +199,12 @@ public class Bienvenue extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-    new Reporting().setVisible(true); //Quand on clique sur Reporting, Reporting s'ouvre
+    new Reporting(x).setVisible(true); //Quand on clique sur Reporting, Reporting s'ouvre
     this.setVisible(false); //Et le menu accueil se ferme
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-     new Ajout().setVisible(true);  //Quand on clique sur Mise à jour, Ajout s'ouvre
+     new MiseAJour(x).setVisible(true);  //Quand on clique sur Mise à jour, Ajout s'ouvre
      this.setVisible(false); //Et le menu accueil se ferme
     }//GEN-LAST:event_jButton1ActionPerformed
 

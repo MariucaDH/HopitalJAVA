@@ -433,4 +433,29 @@ public class Requetes {
         return liste;
     }
         
+        
+          public Object[][] repartitionmutuelles() throws SQLException{ //repartitionmutuelle
+        
+         ResultSet rs;
+         liste = new Object[100][10];
+
+ 
+            rs = stmt.executeQuery("SELECT mutuelle, COUNT(DISTINCT numero) AS nbadherent FROM malade GROUP BY mutuelle");
+            int i = 0;
+            while ( rs.next() ) {
+                String mutuelle = rs.getString("mutuelle");
+                int nbadh = rs.getInt("nbadherent");
+                
+                Object[] str = new Object[] {mutuelle, nbadh};
+                
+                
+                liste[i] = str;
+                
+                i++;
+            }
+        
+
+        return liste;
+    }
+      
 }

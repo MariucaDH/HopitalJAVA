@@ -131,17 +131,20 @@ ch.setBackgroundPaint(new Color (204,255,204));
    }
 
        
-     public static PieDataset donneeschart4( ) {
+     public static PieDataset donneeschart4( ) throws SQLException, ClassNotFoundException {
+         
+         req = new Requetes("local"); 
+         liste = req.repartitionmutuelles(); 
       DefaultPieDataset dataset = new DefaultPieDataset( );
-      dataset.setValue( "MNAM" , new Double( 20 ) );  
-      dataset.setValue( "LMDE" , new Double( 40 ) );   
-      dataset.setValue( "MNH" , new Double( 40 ) );
-      dataset.setValue( "CNAMTS" , new Double( 20 ) );  
-      dataset.setValue( "AG2R" , new Double( 40 ) );   
-      dataset.setValue( "CCVRP" , new Double( 40 ) ); 
-      dataset.setValue( "MGSP" , new Double( 20 ) );  
-      dataset.setValue( "MAS" , new Double( 40 ) );   
-      dataset.setValue( "MNFTC" , new Double( 40 ) );    
+      dataset.setValue( "MNAM" , (Number)liste[0][1] );  
+      dataset.setValue( "LMDE" , (Number)liste[1][1] );   
+      dataset.setValue( "MNH" , (Number)liste[2][1] );
+      dataset.setValue( "CNAMTS" , (Number)liste[3][1] );  
+      dataset.setValue( "AG2R" , (Number)liste[4][1] );   
+      dataset.setValue( "CCVRP" ,(Number)liste[5][1] ); 
+      dataset.setValue( "MGSP" , (Number)liste[6][1] );  
+      dataset.setValue( "MAS" , (Number)liste[7][1] );   
+      dataset.setValue( "MNFTC" , (Number)liste[8][1] );    
       return dataset;         
    }
    

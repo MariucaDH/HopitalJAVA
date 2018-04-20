@@ -8,7 +8,9 @@ package vue;
 
 
 
+import controleur.modèle.Requetes;
 import java.awt.Color;
+import java.sql.SQLException;
 import org.jfree.chart.*;
 import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.PlotOrientation;
@@ -21,6 +23,10 @@ import org.jfree.ui.ApplicationFrame;
  
 public class Graphique extends ApplicationFrame {
    
+    private static Requetes req; 
+    private static Object[][] liste; 
+    private static Object[][] liste1; 
+    private static Object[][] liste2; 
     //Constructeur des chart 
    public Graphique(String titre) {
       super(titre); 
@@ -33,11 +39,14 @@ public class Graphique extends ApplicationFrame {
    //Requete 15 : patientsservice(); 
    
    // 1. On rentre les données 
-   public static PieDataset donneeschart1( ) {
+   public static PieDataset donneeschart1( ) throws SQLException, ClassNotFoundException {
+       req = new Requetes("local"); 
+       liste = req.patientsservice(); 
+       
       DefaultPieDataset dataset = new DefaultPieDataset( );
-      dataset.setValue( "CARDIO" , new Double( 20 ) );  
-      dataset.setValue( "CHIRURGIE" , new Double( 40 ) );   
-      dataset.setValue( "REA" , new Double( 40 ) );     
+      dataset.setValue("CARDIO", (Number) liste[0][1]);  
+      dataset.setValue("CHIRURGIE" , (Number) liste [1][1]);   
+      dataset.setValue("REA" , (Number) liste [2][1]);     
       return dataset;         
    }
     
@@ -48,23 +57,26 @@ public class Graphique extends ApplicationFrame {
          dataset,          //Donnees   
          true,             //Legendes   
          true, 
-         false);
+         true);
 ch.setBackgroundPaint(new Color (204,255,204));
 
       return ch;
    }
    
    ///GRAPHIQUE 2 : SALAIRE INFIRIMIERES JOUR/NUIT : 
-   public static CategoryDataset donneeschart2(){
-       
+   public static CategoryDataset donneeschart2() throws SQLException, ClassNotFoundException{
+       req = new Requetes("local"); 
+       liste = req.salaireinf1200(); //Entre 1200 et 1500
+       liste1 = req.salaireinf1500(); //Entre 1500 et 1800
+       liste2 = req.salaireinf1800(); // Entre 1800 et 2100
        DefaultCategoryDataset dataset = new DefaultCategoryDataset(); 
      
-    dataset.addValue(3, "Jour", "1200€-1500€"); 
-    dataset.addValue(5, "Jour", "1500€-1800€"); 
-    dataset.addValue(6, "Jour", "1800€-2100€"); 
-    dataset.addValue(8, "Nuit", "1200€-1500€"); 
-    dataset.addValue(4, "Nuit", "1500€-1800€"); 
-    dataset.addValue(5, "Nuit", "1800€-2100€"); 
+    dataset.addValue((Number)liste [0][1], "Jour", "1200€-1500€"); //8
+    dataset.addValue((Number)liste1 [0][1], "Jour", "1500€-1800€"); 
+    dataset.addValue((Number)liste2[0][1], "Jour", "1800€-2100€"); 
+    dataset.addValue((Number)liste [1][1], "Nuit", "1200€-1500€"); //8
+    dataset.addValue((Number)liste1 [1][1], "Nuit", "1500€-1800€"); 
+    dataset.addValue((Number)liste2[1][1], "Nuit", "1800€-2100€"); 
   return dataset;
   }   
    
@@ -78,15 +90,17 @@ ch.setBackgroundPaint(new Color (204,255,204));
   }
                
    ///GRAPHIQUE 3 : DOcteurs par spécialité 
-   public static CategoryDataset donneeschart3(){
-       
+   public static CategoryDataset donneeschart3() throws SQLException, ClassNotFoundException{
+       req = new Requetes ("local"); 
+       liste = req.medecinparspe(); 
        DefaultCategoryDataset dataset = new DefaultCategoryDataset(); 
        
-       dataset.addValue(2, "Nombre de docteurs", "Cardiologie");
-       dataset.addValue(3, "Nombre de docteurs", "Pneumatologie");
-       dataset.addValue(5, "Nombre de docteurs", "Traumatologie");
-       dataset.addValue(1, "Nombre de docteurs", "Anesthésiste");
-       dataset.addValue(4, "Nombre de docteurs", "Orthopédiste");
+       dataset.addValue((Number) liste [0][1], "Nombre de docteurs", "Anesthésiste"); //5
+       dataset.addValue((Number) liste [1][1], "Nombre de docteurs", "Cardiologue"); //8 
+       dataset.addValue((Number) liste [2][1], "Nombre de docteurs", "Orthopédiste"); //5 
+       dataset.addValue((Number) liste [3][1], "Nombre de docteurs", "Pneumologue"); //5 
+       dataset.addValue((Number) liste [4][1], "Nombre de docteurs", "Radiologue"); //4
+       dataset.addValue((Number) liste [5][1], "Nombre de docteurs", "Traumatologue"); //5
        return dataset; 
    }
                

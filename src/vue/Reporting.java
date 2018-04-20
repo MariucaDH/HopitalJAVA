@@ -12,8 +12,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
-import static vue.Graphique.createChart1;
-import static vue.Graphique.donneeschart1;
 /**
  *
  * @author Mariuca
@@ -194,8 +192,9 @@ public class Reporting extends javax.swing.JFrame {
        
        G1 = new Graphique("Chart 1");
         JFreeChart ch1; 
-       ch1 =  G1.createChart1(G1.donneeschart1()); 
-     ChartPanel chp1 = new ChartPanel(ch1); 
+        try { 
+            ch1 =  Graphique.createChart1(Graphique.donneeschart1());
+            ChartPanel chp1 = new ChartPanel(ch1); 
      chp1.setSize(464, 317); 
   chp1.setVisible(true); 
     jPanel1.removeAll();
@@ -204,14 +203,19 @@ public class Reporting extends javax.swing.JFrame {
         jPanel1.setSize(463,316);
        
        jPanel1.setVisible(true);
+        } catch (SQLException | ClassNotFoundException ex) {
+            Logger.getLogger(Reporting.class.getName()).log(Level.SEVERE, null, ex);
+        }
+     
  
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         G3 = new Graphique ("Chart 3"); 
         JFreeChart ch3; 
-        ch3 = G3.createChart3(G3.donneeschart3()); 
-        ChartPanel chp3 = new ChartPanel(ch3); 
+        try { 
+            ch3 = Graphique.createChart3(Graphique.donneeschart3());
+            ChartPanel chp3 = new ChartPanel(ch3); 
         chp3.setSize(464,317); 
         chp3.setVisible(true); 
         jPanel1.removeAll();
@@ -219,6 +223,10 @@ public class Reporting extends javax.swing.JFrame {
         jPanel1.add(chp3);
         jPanel1.setSize(463,316);
         jPanel1.setVisible(true); 
+        } catch (SQLException | ClassNotFoundException ex) {
+            Logger.getLogger(Reporting.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
 
 
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -227,8 +235,9 @@ public class Reporting extends javax.swing.JFrame {
 
 G2 = new Graphique ("Chart 2"); 
 JFreeChart ch2; 
-ch2 = G2.createChart2(G2.donneeschart2());
-ChartPanel chp2 = new ChartPanel(ch2); 
+        try {
+            ch2 = G2.createChart2(G2.donneeschart2());
+            ChartPanel chp2 = new ChartPanel(ch2); 
 chp2.setSize(464,317); 
 chp2.setVisible(true);
  jPanel1.removeAll();
@@ -236,6 +245,10 @@ chp2.setVisible(true);
 jPanel1.add(chp2);
  jPanel1.setSize(463,316);
        jPanel1.setVisible(true);
+        } catch (SQLException | ClassNotFoundException ex) {
+            Logger.getLogger(Reporting.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed

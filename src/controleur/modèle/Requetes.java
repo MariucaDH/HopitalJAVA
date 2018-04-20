@@ -7,7 +7,6 @@ package controleur.modèle;
 
 import controleur.Connexion;
 import java.sql.*;
-import java.util.ArrayList;
 
 /**
  *
@@ -282,18 +281,18 @@ public class Requetes {
     
      //------------------------------------------------//
     //R14 : Nombre de medecins par spécialité :
-    ///->>> POUR LE GRAPHIQUE 4 
+    ///->>> POUR LE GRAPHIQUE 3
      public Object[][] medecinparspe() throws SQLException{
         
          ResultSet rs;
          liste = new Object[100][10];
 
  
-            rs = stmt.executeQuery("SELECT specialite, COUNT( DISTINCT numero ) FROM docteur GROUP BY specialite");
+            rs = stmt.executeQuery("SELECT specialite, COUNT(DISTINCT numero) AS nbdoc FROM docteur GROUP BY specialite");
             int i = 0;
             while ( rs.next() ) {
-                String spe = rs.getString("Spécialité");
-                String nbdoc = rs.getString("Nombre de docteurs");
+                String spe = rs.getString("specialite");
+                int nbdoc = rs.getInt("nbdoc");
                 
                 Object[] str = new Object[] { spe, nbdoc};
                 
@@ -342,11 +341,11 @@ public class Requetes {
          liste = new Object[100][10];
 
  
-            rs = stmt.executeQuery("SELECT code_service, COUNT( DISTINCT no_malade )  FROM hospitalisation GROUP BY code_service");
+            rs = stmt.executeQuery("SELECT code_service, COUNT(DISTINCT no_malade) AS n FROM hospitalisation GROUP BY code_service");
             int i = 0;
             while ( rs.next() ) {
-                String codeservice = rs.getString("Nom du service");
-                String nbmalade = rs.getString("Nombre de patients");
+                String codeservice = rs.getString("code_service");
+                int nbmalade = rs.getInt("n");
                 
                 Object[] str = new Object[] {codeservice, nbmalade};
                 
@@ -363,5 +362,75 @@ public class Requetes {
    
         
         
+        
+        public Object[][] salaireinf1200() throws SQLException{ //salaireinf1200
+        
+         ResultSet rs;
+         liste = new Object[100][10];
+
+ 
+            rs = stmt.executeQuery("SELECT rotation, COUNT(DISTINCT numero) AS nbinf FROM infirmier WHERE salaire BETWEEN '1200' AND '1500' GROUP BY rotation");
+            int i = 0;
+            while ( rs.next() ) {
+                String rot = rs.getString("rotation");
+                int nbinf = rs.getInt("nbinf");
+                
+                Object[] str = new Object[] {rot, nbinf};
+                
+                
+                liste[i] = str;
+                
+                i++;
+            }
+        
+
+        return liste;
+    }
+        public Object[][] salaireinf1500() throws SQLException{ //salaireinf1500
+        
+         ResultSet rs;
+         liste = new Object[100][10];
+
+ 
+            rs = stmt.executeQuery("SELECT rotation, COUNT(DISTINCT numero) AS nbinf FROM infirmier WHERE salaire BETWEEN '1500' AND '1800' GROUP BY rotation");
+            int i = 0;
+            while ( rs.next() ) {
+                String rot = rs.getString("rotation");
+                int nbinf = rs.getInt("nbinf");
+                
+                Object[] str = new Object[] {rot, nbinf};
+                
+                
+                liste[i] = str;
+                
+                i++;
+            }
+        
+
+        return liste;
+    }
+        public Object[][] salaireinf1800() throws SQLException{ //salaireinf1800
+        
+         ResultSet rs;
+         liste = new Object[100][10];
+
+ 
+            rs = stmt.executeQuery("SELECT rotation, COUNT(DISTINCT numero) AS nbinf FROM infirmier WHERE salaire BETWEEN '1800' AND '2100' GROUP BY rotation");
+            int i = 0;
+            while ( rs.next() ) {
+                String rot = rs.getString("rotation");
+                int nbinf = rs.getInt("nbinf");
+                
+                Object[] str = new Object[] {rot, nbinf};
+                
+                
+                liste[i] = str;
+                
+                i++;
+            }
+        
+
+        return liste;
+    }
         
 }

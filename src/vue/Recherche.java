@@ -334,7 +334,7 @@ public class Recherche extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        //R1. Prénom et nom des malades affiliés à la mutuelle « MAAF ».
         Object[][] result;
         try {
             result = this.req.usermaaf();
@@ -348,6 +348,7 @@ public class Recherche extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        //R2. Prénom et nom des infirmier(ères) travaillant pendant la rotation de nuit. 
         Object[][] result;
         try {
             result = this.req.infirmiernuit();
@@ -361,7 +362,7 @@ public class Recherche extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+        //R3. Nom et bâtiment d’un service & prénom, nom et spécialité de son directeur. 
         Object[][] result;
         try {
             result = this.req.services();
@@ -375,7 +376,8 @@ public class Recherche extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-       Object[][] result;
+      //R5. Moyenne des salaires des infirmiers(ères) par service.
+        Object[][] result;
         try {
             result = this.req.moyennesalaires();
              Object headers[] = { "Services", "Salaires"};
@@ -388,6 +390,7 @@ public class Recherche extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        //R6. Nombre moyen de lits par chambre pour chaque service du bâtiment « A » de l’hôpital.
         Object[][] result;
         try {
             result = this.req.litbatimentA();
@@ -414,6 +417,16 @@ public class Recherche extends javax.swing.JFrame {
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         //R11. Nombre de patients guéris, par médecin.
+        Object[][] result;
+        try {
+            result = this.req.nbpatientsgueris();
+             Object headers[] = { "Numero du docteur", "Nombre de patients soignés"};
+            this.Requêtes.getViewport().removeAll();
+            JTable table = new JTable(result, headers);
+            this.Requêtes.getViewport().add (table);
+        } catch (SQLException ex) {
+            Logger.getLogger(Recherche.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
@@ -430,6 +443,16 @@ public class Recherche extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         //R15 : Nom de l’infirmier qui a le salaire maximum et montant de celui-ci 
+        Object[][] result;
+        try {
+            result = this.req.patientsservice();
+             Object headers[] = { "Nom du service", "Nombre de patients"};
+            this.Requêtes.getViewport().removeAll();
+            JTable table = new JTable(result, headers);
+            this.Requêtes.getViewport().add (table);
+        } catch (SQLException ex) {
+            Logger.getLogger(Recherche.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**

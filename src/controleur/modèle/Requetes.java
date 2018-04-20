@@ -341,7 +341,7 @@ public class Requetes {
          ResultSet rs;
          liste = new Object[100][10];
 
- 
+
             rs = stmt.executeQuery("SELECT code_service, COUNT( DISTINCT no_malade )  FROM hospitalisation GROUP BY code_service");
             int i = 0;
             while ( rs.next() ) {

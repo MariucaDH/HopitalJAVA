@@ -23,6 +23,7 @@ public class MiseAJour extends javax.swing.JFrame {
      */
     
     private Requetes req;
+    private JTable table = null;
     
     
     public MiseAJour(boolean x) {
@@ -49,7 +50,7 @@ public class MiseAJour extends javax.swing.JFrame {
         initComponents();
     }
 
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -269,7 +270,7 @@ public class MiseAJour extends javax.swing.JFrame {
         
         Object headers[] = { "Code service", "Numéro de chambre", "Surveillant", "Nombre de lits"};
         this.jScrollPane1.getViewport().removeAll();
-        JTable table = null;
+        //JTable table = null;
         try {
             table = new JTable(this.req.gettable("chambre"), headers);
         } catch (SQLException ex) {
@@ -282,7 +283,7 @@ public class MiseAJour extends javax.swing.JFrame {
         //On affiche la table Docteur
         Object headers[] = { "Numéro", "Spécialité"};
         this.jScrollPane1.getViewport().removeAll();
-        JTable table = null;
+        //JTable table = null;
         try {
             table = new JTable(this.req.gettable("docteur"), headers);
         } catch (SQLException ex) {
@@ -295,7 +296,7 @@ public class MiseAJour extends javax.swing.JFrame {
         // On affiche la table Employés
         Object headers[] = { "Numéro", "Nom", "Prénom", "Adresse", "Téléphone"};
         this.jScrollPane1.getViewport().removeAll();
-        JTable table = null;
+        //JTable table = null;
         try {
             table = new JTable(this.req.gettable("employe"), headers);
         } catch (SQLException ex) {
@@ -308,7 +309,7 @@ public class MiseAJour extends javax.swing.JFrame {
         // On affiche la table Soigné
         Object headers[] = { "Numéro docteur", "Numéro malade"};
         this.jScrollPane1.getViewport().removeAll();
-        JTable table = null;
+        //JTable table = null;
         try {
             table = new JTable(this.req.gettable("soigne"), headers);
         } catch (SQLException ex) {
@@ -321,7 +322,7 @@ public class MiseAJour extends javax.swing.JFrame {
         //On affiche la table Hospitalisation
         Object headers[] = { "Numéro du malade", "Code Service", "Numéro de chambre", "Lit"};
         this.jScrollPane1.getViewport().removeAll();
-        JTable table = null;
+        //JTable table = null;
         try {
             table = new JTable(this.req.gettable("hospitalisation"), headers);
         } catch (SQLException ex) {
@@ -334,7 +335,7 @@ public class MiseAJour extends javax.swing.JFrame {
         //On affiche la table Infirmiers
         Object headers[] = { "Numéro", "Code Service", "Rotation", "Salaire"};
         this.jScrollPane1.getViewport().removeAll();
-        JTable table = null;
+        //JTable table = null;
         try {
             table = new JTable(this.req.gettable("infirmier"), headers);
         } catch (SQLException ex) {
@@ -347,7 +348,7 @@ public class MiseAJour extends javax.swing.JFrame {
         // On affiche la table Malade
         Object headers[] = { "Numéro", "Nom", "Prénom", "Adresse", "Téléphone", "Mutuelle"};
         this.jScrollPane1.getViewport().removeAll();
-        JTable table = null;
+        //JTable table = null;
         try {
             table = new JTable(this.req.gettable("malade"), headers);
         } catch (SQLException ex) {
@@ -360,7 +361,7 @@ public class MiseAJour extends javax.swing.JFrame {
         // On affiche la table Service
         Object headers[] = { "Code", "Nom", "Batiment", "Directeur"};
         this.jScrollPane1.getViewport().removeAll();
-        JTable table = null;
+        //JTable table = null;
         try {
             table = new JTable(this.req.gettable("service"), headers);
         } catch (SQLException ex) {

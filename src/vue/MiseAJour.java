@@ -10,6 +10,7 @@ import java.awt.Color;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JTable;
 
 /**
  *
@@ -265,34 +266,107 @@ public class MiseAJour extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         //On affiche la table Chambre
+        
+        Object headers[] = { "Code service", "Numéro de chambre", "Surveillant", "Nombre de lits"};
+        this.jScrollPane1.getViewport().removeAll();
+        JTable table = null;
+        try {
+            table = new JTable(this.req.gettable("chambre"), headers);
+        } catch (SQLException ex) {
+            Logger.getLogger(MiseAJour.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.jScrollPane1.getViewport().add (table);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         //On affiche la table Docteur
+        Object headers[] = { "Numéro", "Spécialité"};
+        this.jScrollPane1.getViewport().removeAll();
+        JTable table = null;
+        try {
+            table = new JTable(this.req.gettable("docteur"), headers);
+        } catch (SQLException ex) {
+            Logger.getLogger(MiseAJour.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.jScrollPane1.getViewport().add (table);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // On affiche la table Employés
+        Object headers[] = { "Numéro", "Nom", "Prénom", "Adresse", "Téléphone"};
+        this.jScrollPane1.getViewport().removeAll();
+        JTable table = null;
+        try {
+            table = new JTable(this.req.gettable("employe"), headers);
+        } catch (SQLException ex) {
+            Logger.getLogger(MiseAJour.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.jScrollPane1.getViewport().add (table);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // On affiche la table Soigné
+        Object headers[] = { "Numéro docteur", "Numéro malade"};
+        this.jScrollPane1.getViewport().removeAll();
+        JTable table = null;
+        try {
+            table = new JTable(this.req.gettable("soigne"), headers);
+        } catch (SQLException ex) {
+            Logger.getLogger(MiseAJour.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.jScrollPane1.getViewport().add (table);
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         //On affiche la table Hospitalisation
+        Object headers[] = { "Numéro du malade", "Code Service", "Numéro de chambre", "Lit"};
+        this.jScrollPane1.getViewport().removeAll();
+        JTable table = null;
+        try {
+            table = new JTable(this.req.gettable("hospitalisation"), headers);
+        } catch (SQLException ex) {
+            Logger.getLogger(MiseAJour.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.jScrollPane1.getViewport().add (table);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         //On affiche la table Infirmiers
+        Object headers[] = { "Numéro", "Code Service", "Rotation", "Salaire"};
+        this.jScrollPane1.getViewport().removeAll();
+        JTable table = null;
+        try {
+            table = new JTable(this.req.gettable("infirmier"), headers);
+        } catch (SQLException ex) {
+            Logger.getLogger(MiseAJour.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.jScrollPane1.getViewport().add (table);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // On affiche la table Malade
+        Object headers[] = { "Numéro", "Nom", "Prénom", "Adresse", "Téléphone", "Mutuelle"};
+        this.jScrollPane1.getViewport().removeAll();
+        JTable table = null;
+        try {
+            table = new JTable(this.req.gettable("malade"), headers);
+        } catch (SQLException ex) {
+            Logger.getLogger(MiseAJour.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.jScrollPane1.getViewport().add (table);
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // On affiche la table Service
+        Object headers[] = { "Code", "Nom", "Batiment", "Directeur"};
+        this.jScrollPane1.getViewport().removeAll();
+        JTable table = null;
+        try {
+            table = new JTable(this.req.gettable("service"), headers);
+        } catch (SQLException ex) {
+            Logger.getLogger(MiseAJour.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.jScrollPane1.getViewport().add (table);
     }//GEN-LAST:event_jButton8ActionPerformed
 
     

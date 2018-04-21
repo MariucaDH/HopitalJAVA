@@ -37,6 +37,36 @@ public class Requetes {
     }
     
     
+    public Object[][] gettable(String table) throws SQLException{
+        
+         ResultSet rs;
+         liste = new Object[200][10];
+
+ 
+            rs = stmt.executeQuery("SELECT * FROM "+table+" ORDER BY 1 ASC");
+            ResultSetMetaData rsmd = rs.getMetaData();
+            int columnsNumber = rsmd.getColumnCount(); 
+            
+            int i = 0;
+            while ( rs.next() ) {
+                
+                Object[] str = new Object[columnsNumber];
+                for(int j = 1 ; j <= columnsNumber; j++){
+                        str[j-1] = rs.getString(j);
+                  }
+                
+                
+                
+                liste[i] = str;
+                //System.out.println(prenom);
+                i++;
+            }
+        
+
+        return liste;
+    }
+    
+    
     public Object[][] usermaaf() throws SQLException{
         
          ResultSet rs;
@@ -431,6 +461,10 @@ public class Requetes {
         
 
         return liste;
+    }
+
+    private void displayRow(String products, ResultSet rs) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
         
 }

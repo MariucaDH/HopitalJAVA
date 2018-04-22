@@ -28,7 +28,8 @@ public class MiseAJour extends javax.swing.JFrame {
     
     private Requetes req;
     private JTable table = null;
-    
+    private  Object headers[];
+    private String selectedtable;
     
     public MiseAJour(boolean x) {
         
@@ -80,6 +81,7 @@ public class MiseAJour extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        jButton10 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -173,6 +175,13 @@ public class MiseAJour extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
         jLabel3.setText("Sélectionnez la catégorie depuis laquelle vous souhaitez modifier des données :");
 
+        jButton10.setText("Rafraichir");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -208,7 +217,6 @@ public class MiseAJour extends javax.swing.JFrame {
                                                 .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)))
                                         .addGap(25, 25, 25))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addGap(28, 28, 28)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jButton6)
                                             .addGroup(layout.createSequentialGroup()
@@ -224,8 +232,10 @@ public class MiseAJour extends javax.swing.JFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 643, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(207, 207, 207))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton2)
-                        .addGap(196, 196, 196))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton10)
+                            .addComponent(jButton2))
+                        .addGap(183, 183, 183))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -258,7 +268,9 @@ public class MiseAJour extends javax.swing.JFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(617, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton10)
+                .addContainerGap(582, Short.MAX_VALUE))
         );
 
         pack();
@@ -273,13 +285,13 @@ public class MiseAJour extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         //On affiche la table Chambre
-        
-        Object headers[] = { "code_service", "no_chambre", "surveillant", "nb_lits"};
+        this.selectedtable = "chambre";
+        this.headers = new Object[]{ "code_service", "no_chambre", "surveillant", "nb_lits"};
         this.jScrollPane1.getViewport().removeAll();
         //JTable table = null;
         try {
             table = new JTable(this.req.gettable("chambre"), headers);
-            table.getModel().addTableModelListener(new UpdateCell("chambre", this.req));
+            table.getModel().addTableModelListener(new UpdateCell(table, "chambre", this.req));
 
         } catch (SQLException ex) {
             Logger.getLogger(MiseAJour.class.getName()).log(Level.SEVERE, null, ex);
@@ -289,12 +301,13 @@ public class MiseAJour extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         //On affiche la table Docteur
-        Object headers[] = { "numero", "specialite"};
+        this.selectedtable = "docteur";
+        this.headers = new Object[]{ "numero", "specialite"};
         this.jScrollPane1.getViewport().removeAll();
         //JTable table = null;
         try {
             table = new JTable(this.req.gettable("docteur"), headers);
-            table.getModel().addTableModelListener(new UpdateCell("docteur", this.req));
+            table.getModel().addTableModelListener(new UpdateCell(table, "docteur", this.req));
         } catch (SQLException ex) {
             Logger.getLogger(MiseAJour.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -303,12 +316,13 @@ public class MiseAJour extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // On affiche la table Employés
-        Object headers[] = { "numero", "nom", "prenom", "adresse", "tel"};
+        this.selectedtable = "employe";
+        this.headers = new Object[]{ "numero", "nom", "prenom", "adresse", "tel"};
         this.jScrollPane1.getViewport().removeAll();
         //JTable table = null;
         try {
             table = new JTable(this.req.gettable("employe"), headers);
-            table.getModel().addTableModelListener(new UpdateCell("employe", this.req));
+            table.getModel().addTableModelListener(new UpdateCell(table, "employe", this.req));
         } catch (SQLException ex) {
             Logger.getLogger(MiseAJour.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -317,12 +331,13 @@ public class MiseAJour extends javax.swing.JFrame {
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // On affiche la table Soigné
-        Object headers[] = { "no_docteur", "no_malade"};
+        this.selectedtable = "soigne";
+        this.headers = new Object[]{ "no_docteur", "no_malade"};
         this.jScrollPane1.getViewport().removeAll();
         //JTable table = null;
         try {
             table = new JTable(this.req.gettable("soigne"), headers);
-            table.getModel().addTableModelListener(new UpdateCell("soigne", this.req));
+            table.getModel().addTableModelListener(new UpdateCell(table, "soigne", this.req));
         } catch (SQLException ex) {
             Logger.getLogger(MiseAJour.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -331,12 +346,13 @@ public class MiseAJour extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         //On affiche la table Hospitalisation
-        Object headers[] = { "no_malade", "code_service", "no_chambre", "lit"};
+        this.selectedtable = "hospitalisation";
+        this.headers = new Object[]{ "no_malade", "code_service", "no_chambre", "lit"};
         this.jScrollPane1.getViewport().removeAll();
         //JTable table = null;
         try {
             table = new JTable(this.req.gettable("hospitalisation"), headers);
-            table.getModel().addTableModelListener(new UpdateCell("hospitalisation", this.req));
+            table.getModel().addTableModelListener(new UpdateCell(table, "hospitalisation", this.req));
         } catch (SQLException ex) {
             Logger.getLogger(MiseAJour.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -345,12 +361,13 @@ public class MiseAJour extends javax.swing.JFrame {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         //On affiche la table Infirmiers
-        Object headers[] = { "numero", "code_service", "rotation", "salaire"};
+        this.selectedtable = "infirmier";
+        this.headers = new Object[]{ "numero", "code_service", "rotation", "salaire"};
         this.jScrollPane1.getViewport().removeAll();
         //JTable table = null;
         try {
             table = new JTable(this.req.gettable("infirmier"), headers);
-            table.getModel().addTableModelListener(new UpdateCell("infirmier", this.req));
+            table.getModel().addTableModelListener(new UpdateCell(table, "infirmier", this.req));
         } catch (SQLException ex) {
             Logger.getLogger(MiseAJour.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -359,12 +376,13 @@ public class MiseAJour extends javax.swing.JFrame {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // On affiche la table Malade
-        Object headers[] = { "numero", "nom", "prenom", "adresse", "tel", "mutuelle"};
+        this.selectedtable = "malade";
+        this.headers = new Object[]{ "numero", "nom", "prenom", "adresse", "tel", "mutuelle"};
         this.jScrollPane1.getViewport().removeAll();
         //JTable table = null;
         try {
             table = new JTable(this.req.gettable("malade"), headers);
-            table.getModel().addTableModelListener(new UpdateCell("malade", this.req));
+            table.getModel().addTableModelListener(new UpdateCell(table, "malade", this.req));
         } catch (SQLException ex) {
             Logger.getLogger(MiseAJour.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -373,22 +391,37 @@ public class MiseAJour extends javax.swing.JFrame {
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // On affiche la table Service
-        Object headers[] = { "code", "nom", "batiment", "directeur"};
+        this.selectedtable = "service";
+        this.headers = new Object[]{ "code", "nom", "batiment", "directeur"};
         this.jScrollPane1.getViewport().removeAll();
         //JTable table = null;
         try {
             table = new JTable(this.req.gettable("service"), headers);
-            table.getModel().addTableModelListener(new UpdateCell("service", this.req));
+            table.getModel().addTableModelListener(new UpdateCell(table, "service", this.req));
         } catch (SQLException ex) {
             Logger.getLogger(MiseAJour.class.getName()).log(Level.SEVERE, null, ex);
         }
         this.jScrollPane1.getViewport().add (table);
     }//GEN-LAST:event_jButton8ActionPerformed
 
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // Refresh
+         this.jScrollPane1.getViewport().removeAll();
+        //JTable table = null;
+        try {
+            table = new JTable(this.req.gettable(this.selectedtable), this.headers);
+            table.getModel().addTableModelListener(new UpdateCell(table, this.selectedtable, this.req));
+        } catch (SQLException ex) {
+            Logger.getLogger(MiseAJour.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.jScrollPane1.getViewport().add (table);
+    }//GEN-LAST:event_jButton10ActionPerformed
+
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;

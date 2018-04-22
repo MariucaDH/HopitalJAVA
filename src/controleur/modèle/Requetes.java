@@ -69,16 +69,36 @@ public class Requetes {
     
     
     public void updaterow(String table, String field, String value, String previous){
-
-        System.out.println("SELECT "+field+" FROM "+ table +" WHERE "+field+" = '"+previous+"' LIMIT 1");
         
         try{
             
+            if(previous == null){
+                //Insert
+                 stmt.executeUpdate("INSERT INTO "+ table +" ("+field+") VALUES ('"+value+"')");
+            } else {
+                //update
+                 stmt.executeUpdate("UPDATE "+ table +"  SET "+field+" = '"+value+"' WHERE "+field+" = '"+previous+"' ");
+            }
+            
 
-             stmt.executeUpdate("INSERT INTO "+ table +" ("+field+") VALUES ('"+value+"') ON DUPLICATE KEY UPDATE SET "+field+" = '"+value+"' WHERE "+field+" = '"+previous+"' ");
+            
   
             
             
+           
+       }catch(SQLException e){
+            System.out.println(e.getMessage());
+       }
+
+    }
+    
+    public void deleterow(String table, String field, String previous){
+
+        
+        try{
+            
+             stmt.executeUpdate("DELETE FROM "+table+" WHERE "+field+" = '"+previous+"'");
+  
            
        }catch(SQLException e){
             System.out.println(e.getMessage());

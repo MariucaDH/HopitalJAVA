@@ -20,6 +20,7 @@ import javax.swing.table.TableModel;
 public class UpdateCell implements TableModelListener{
 
     
+        private JTable jtable;
         private String table = "";
         private Requetes req;
         private Object[][] previous;
@@ -35,10 +36,23 @@ public class UpdateCell implements TableModelListener{
                 
                  System.out.println(columnName + ": " + val);
                  System.out.println(column + ": " + row);
-                 System.out.println(this.previous);
                  
                 
-                this.req.updaterow(table, columnName, val, (String) this.previous[row][column]);
+                if(val.length() < 1){
+                    //Delete the row 
+                    System.out.println("Deleting row "+row);
+                    this.req.deleterow(table, columnName, (String) this.previous[row][column]);
+                    this.jtable.remove(row);
+                    this.jtable.revalidate();
+                } else {
+                    System.out.println("Previous data "+this.previous[row][column]);
+                     this.req.updaterow(table, columnName, val, (String) this.previous[row][column]);
+                }
+                
+                
+                 
+                
+               
                 
                
               
@@ -63,9 +77,10 @@ public class UpdateCell implements TableModelListener{
             
         }
         
-        public UpdateCell(String t, Requetes r){
+        public UpdateCell(JTable table, String t, Requetes r){
             this.table = t;
             this.req = r;
+            this.jtable = table;
             try {
                 this.previous = this.req.gettable(t);
             } catch (SQLException ex) {

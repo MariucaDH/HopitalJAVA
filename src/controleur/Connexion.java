@@ -64,7 +64,7 @@ public class Connexion {
         stmt = conn.createStatement();
     }
     
-    //Connexion 000Free Hosting
+    //Connexion Free database
     public Connexion(String serverpath) throws SQLException, ClassNotFoundException {
         // chargement driver "com.mysql.jdbc.Driver"
         Class.forName("com.mysql.jdbc.Driver");

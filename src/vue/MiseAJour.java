@@ -6,10 +6,15 @@
 package vue;
 
 import controleur.modèle.Requetes;
+import controleur.modèle.UpdateCell;
 import java.awt.Color;
+import java.awt.event.InputMethodEvent;
+import java.awt.event.InputMethodListener;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -22,7 +27,9 @@ public class MiseAJour extends javax.swing.JFrame {
      */
     
     private Requetes req;
-    
+    private JTable table = null;
+    private  Object headers[];
+    private String selectedtable;
     
     public MiseAJour(boolean x) {
         
@@ -49,6 +56,8 @@ public class MiseAJour extends javax.swing.JFrame {
     }
 
     
+    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -71,6 +80,8 @@ public class MiseAJour extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jButton10 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -90,105 +101,162 @@ public class MiseAJour extends javax.swing.JFrame {
         jLabel2.setText("ADD / DELETE / UPDATE");
 
         jButton1.setBackground(new java.awt.Color(204, 204, 238));
-        jButton1.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 18)); // NOI18N
         jButton1.setText("Docteur");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton3.setBackground(new java.awt.Color(204, 204, 238));
-        jButton3.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 18)); // NOI18N
         jButton3.setText("Employé");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setBackground(new java.awt.Color(204, 204, 238));
-        jButton4.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
+        jButton4.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 18)); // NOI18N
         jButton4.setText("Chambre");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setBackground(new java.awt.Color(204, 204, 238));
-        jButton5.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
+        jButton5.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 18)); // NOI18N
         jButton5.setText("Hospitalisation");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setBackground(new java.awt.Color(204, 204, 238));
-        jButton6.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
+        jButton6.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 18)); // NOI18N
         jButton6.setText("Infirmier");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton7.setBackground(new java.awt.Color(204, 204, 238));
-        jButton7.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
+        jButton7.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 18)); // NOI18N
         jButton7.setText("Malade");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         jButton8.setBackground(new java.awt.Color(204, 204, 238));
-        jButton8.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
+        jButton8.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 18)); // NOI18N
         jButton8.setText("Service");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         jButton9.setBackground(new java.awt.Color(204, 204, 238));
-        jButton9.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
+        jButton9.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 18)); // NOI18N
         jButton9.setText("Soigné");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
+        jLabel3.setText("Sélectionnez la catégorie depuis laquelle vous souhaitez modifier des données :");
+
+        jButton10.setText("Rafraichir");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(401, 401, 401)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(99, 99, 99)))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(106, 106, 106)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton3)
-                            .addComponent(jButton1)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(84, 84, 84)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton5)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(21, 21, 21)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(39, 39, 39))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton6)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(6, 6, 6)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jButton8)
-                                            .addComponent(jButton7)
-                                            .addComponent(jButton9))))))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 200, Short.MAX_VALUE)
-                .addComponent(jScrollBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(400, 400, 400))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jButton2)
-                                .addGap(30, 30, 30))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(499, 499, 499))))
-                    .addGroup(layout.createSequentialGroup()
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(jButton4)
+                                        .addGap(21, 21, 21))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(6, 6, 6)
+                                                .addComponent(jButton9))
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)))
+                                        .addGap(25, 25, 25))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jButton6)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(6, 6, 6)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(jButton8)
+                                                    .addComponent(jButton7, javax.swing.GroupLayout.Alignment.LEADING))))
+                                        .addGap(26, 26, 26))
+                                    .addComponent(jButton5, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addGap(240, 240, 240)))
+                        .addComponent(jScrollBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 815, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35))))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(105, 105, 105)
-                    .addComponent(jButton4)
-                    .addContainerGap(1087, Short.MAX_VALUE)))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 643, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(207, 207, 207))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton10)
+                            .addComponent(jButton2))
+                        .addGap(183, 183, 183))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(51, 51, 51)
+                .addGap(48, 48, 48)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
+                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 513, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(119, 119, 119)
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -196,33 +264,164 @@ public class MiseAJour extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton9)))
-                .addGap(637, 637, 637)
+                        .addComponent(jButton8))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(192, 192, 192)
-                    .addComponent(jButton4)
-                    .addContainerGap(1141, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton10)
+                .addContainerGap(582, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
+     
     
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
      new Bienvenue().setVisible(true);   //On revient à l'accueil
      this.setVisible(false);        // On ferme la fenetre Ajout
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        //On affiche la table Chambre
+        this.selectedtable = "chambre";
+        this.headers = new Object[]{ "code_service", "no_chambre", "surveillant", "nb_lits"};
+        this.jScrollPane1.getViewport().removeAll();
+        //JTable table = null;
+        try {
+            table = new JTable(this.req.gettable("chambre"), headers);
+            table.getModel().addTableModelListener(new UpdateCell(table, "chambre", this.req));
+
+        } catch (SQLException ex) {
+            Logger.getLogger(MiseAJour.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.jScrollPane1.getViewport().add (table);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        //On affiche la table Docteur
+        this.selectedtable = "docteur";
+        this.headers = new Object[]{ "numero", "specialite"};
+        this.jScrollPane1.getViewport().removeAll();
+        //JTable table = null;
+        try {
+            table = new JTable(this.req.gettable("docteur"), headers);
+            table.getModel().addTableModelListener(new UpdateCell(table, "docteur", this.req));
+        } catch (SQLException ex) {
+            Logger.getLogger(MiseAJour.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.jScrollPane1.getViewport().add (table);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // On affiche la table Employés
+        this.selectedtable = "employe";
+        this.headers = new Object[]{ "numero", "nom", "prenom", "adresse", "tel"};
+        this.jScrollPane1.getViewport().removeAll();
+        //JTable table = null;
+        try {
+            table = new JTable(this.req.gettable("employe"), headers);
+            table.getModel().addTableModelListener(new UpdateCell(table, "employe", this.req));
+        } catch (SQLException ex) {
+            Logger.getLogger(MiseAJour.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.jScrollPane1.getViewport().add (table);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // On affiche la table Soigné
+        this.selectedtable = "soigne";
+        this.headers = new Object[]{ "no_docteur", "no_malade"};
+        this.jScrollPane1.getViewport().removeAll();
+        //JTable table = null;
+        try {
+            table = new JTable(this.req.gettable("soigne"), headers);
+            table.getModel().addTableModelListener(new UpdateCell(table, "soigne", this.req));
+        } catch (SQLException ex) {
+            Logger.getLogger(MiseAJour.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.jScrollPane1.getViewport().add (table);
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        //On affiche la table Hospitalisation
+        this.selectedtable = "hospitalisation";
+        this.headers = new Object[]{ "no_malade", "code_service", "no_chambre", "lit"};
+        this.jScrollPane1.getViewport().removeAll();
+        //JTable table = null;
+        try {
+            table = new JTable(this.req.gettable("hospitalisation"), headers);
+            table.getModel().addTableModelListener(new UpdateCell(table, "hospitalisation", this.req));
+        } catch (SQLException ex) {
+            Logger.getLogger(MiseAJour.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.jScrollPane1.getViewport().add (table);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        //On affiche la table Infirmiers
+        this.selectedtable = "infirmier";
+        this.headers = new Object[]{ "numero", "code_service", "rotation", "salaire"};
+        this.jScrollPane1.getViewport().removeAll();
+        //JTable table = null;
+        try {
+            table = new JTable(this.req.gettable("infirmier"), headers);
+            table.getModel().addTableModelListener(new UpdateCell(table, "infirmier", this.req));
+        } catch (SQLException ex) {
+            Logger.getLogger(MiseAJour.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.jScrollPane1.getViewport().add (table);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // On affiche la table Malade
+        this.selectedtable = "malade";
+        this.headers = new Object[]{ "numero", "nom", "prenom", "adresse", "tel", "mutuelle"};
+        this.jScrollPane1.getViewport().removeAll();
+        //JTable table = null;
+        try {
+            table = new JTable(this.req.gettable("malade"), headers);
+            table.getModel().addTableModelListener(new UpdateCell(table, "malade", this.req));
+        } catch (SQLException ex) {
+            Logger.getLogger(MiseAJour.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.jScrollPane1.getViewport().add (table);
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // On affiche la table Service
+        this.selectedtable = "service";
+        this.headers = new Object[]{ "code", "nom", "batiment", "directeur"};
+        this.jScrollPane1.getViewport().removeAll();
+        //JTable table = null;
+        try {
+            table = new JTable(this.req.gettable("service"), headers);
+            table.getModel().addTableModelListener(new UpdateCell(table, "service", this.req));
+        } catch (SQLException ex) {
+            Logger.getLogger(MiseAJour.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.jScrollPane1.getViewport().add (table);
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // Refresh
+         this.jScrollPane1.getViewport().removeAll();
+        //JTable table = null;
+        try {
+            table = new JTable(this.req.gettable(this.selectedtable), this.headers);
+            table.getModel().addTableModelListener(new UpdateCell(table, this.selectedtable, this.req));
+        } catch (SQLException ex) {
+            Logger.getLogger(MiseAJour.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.jScrollPane1.getViewport().add (table);
+    }//GEN-LAST:event_jButton10ActionPerformed
+
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -233,6 +432,7 @@ public class MiseAJour extends javax.swing.JFrame {
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables

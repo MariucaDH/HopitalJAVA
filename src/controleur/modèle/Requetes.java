@@ -31,7 +31,7 @@ public class Requetes {
             this.bdd = new Connexion("hospital", "root", "azerty");
         } else if(type == "ece") {
             this.is_distant = true;
-            this.bdd = new Connexion("jk151987", "RTlbuabe00//", "jk151987-rw", "ss1eCbfw");
+           this.bdd = new Connexion("mysql8.db4free.net");
         }
         this.stmt = this.bdd.getstatement();
     }
@@ -61,8 +61,85 @@ public class Requetes {
         return liste;
     }
     
-    //REQUETE 2 : 
-    public Object[][] infirmiernuit() throws SQLException{
+
+    
+    public void updaterow(String table, String field, String value, String previous){
+        
+        try{
+            
+            if(previous != null){
+                 stmt.executeUpdate("UPDATE "+ table +"  SET "+field+" = '"+value+"' WHERE "+field+" = '"+previous+"' ");
+            }
+           
+       }catch(SQLException e){
+            System.out.println(e.getMessage());
+       }
+
+    }
+    
+    
+    public void executeinsert(String req){
+        
+        try{
+            
+               stmt.executeUpdate(req);
+
+           
+       }catch(SQLException e){
+            System.out.println(e.getMessage());
+       }
+
+    }
+    
+    
+    public Object[][] gettable(String table) throws SQLException{
+        
+         ResultSet rs;
+         liste = new Object[200][10];
+
+ 
+            rs = stmt.executeQuery("SELECT * FROM "+table+" ORDER BY 1 ASC");
+            ResultSetMetaData rsmd = rs.getMetaData();
+            int columnsNumber = rsmd.getColumnCount(); 
+            
+            int i = 0;
+            while ( rs.next() ) {
+                
+                Object[] str = new Object[columnsNumber];
+                for(int j = 1 ; j <= columnsNumber; j++){
+                        str[j-1] = rs.getString(j);
+                  }
+                
+                
+                
+                liste[i] = str;
+                //System.out.println(prenom);
+                i++;
+            }
+        
+
+        return liste;
+    }
+    
+    public void deleterow(String table, String field, String previous){
+
+        
+        try{
+            
+             stmt.executeUpdate("DELETE FROM "+table+" WHERE "+field+" = '"+previous+"'");
+  
+           
+       }catch(SQLException e){
+            System.out.println(e.getMessage());
+       }
+
+    }
+    
+
+    
+        
+        public Object[][] infirmiernuit() throws SQLException{
+
         
          ResultSet rs;
          liste = new Object[100][10];

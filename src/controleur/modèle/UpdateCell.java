@@ -44,7 +44,7 @@ public class UpdateCell implements TableModelListener{
                     this.req.deleterow(table, columnName, (String) this.previous[row][column]);
                     this.jtable.remove(row);
                     this.jtable.revalidate();
-                } else {
+                } else if(previous != null) {
                     System.out.println("Previous data "+this.previous[row][column]);
                      this.req.updaterow(table, columnName, val, (String) this.previous[row][column]);
                 }

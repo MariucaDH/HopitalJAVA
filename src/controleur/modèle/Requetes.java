@@ -72,19 +72,23 @@ public class Requetes {
         
         try{
             
-            if(previous == null){
-                //Insert
-                 stmt.executeUpdate("INSERT INTO "+ table +" ("+field+") VALUES ('"+value+"')");
-            } else {
-                //update
+            if(previous != null){
                  stmt.executeUpdate("UPDATE "+ table +"  SET "+field+" = '"+value+"' WHERE "+field+" = '"+previous+"' ");
             }
-            
+           
+       }catch(SQLException e){
+            System.out.println(e.getMessage());
+       }
 
+    }
+    
+    
+    public void executeinsert(String req){
+        
+        try{
             
-  
-            
-            
+               stmt.executeUpdate(req);
+
            
        }catch(SQLException e){
             System.out.println(e.getMessage());

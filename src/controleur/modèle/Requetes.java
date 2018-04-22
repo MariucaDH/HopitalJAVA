@@ -31,7 +31,7 @@ public class Requetes {
             this.bdd = new Connexion("hospital", "root", "azerty");
         } else if(type == "ece") {
             this.is_distant = true;
-            this.bdd = new Connexion("jk151987", "RTlbuabe00//", "jk151987-rw", "ss1eCbfw");
+           this.bdd = new Connexion("mysql8.db4free.net");
         }
         this.stmt = this.bdd.getstatement();
     }

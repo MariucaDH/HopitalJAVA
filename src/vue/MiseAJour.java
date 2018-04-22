@@ -6,11 +6,15 @@
 package vue;
 
 import controleur.modèle.Requetes;
+import controleur.modèle.UpdateCell;
 import java.awt.Color;
+import java.awt.event.InputMethodEvent;
+import java.awt.event.InputMethodListener;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -50,6 +54,8 @@ public class MiseAJour extends javax.swing.JFrame {
         initComponents();
     }
 
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -258,7 +264,7 @@ public class MiseAJour extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
+     
     
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
      new Bienvenue().setVisible(true);   //On revient à l'accueil
@@ -268,11 +274,13 @@ public class MiseAJour extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         //On affiche la table Chambre
         
-        Object headers[] = { "Code service", "Numéro de chambre", "Surveillant", "Nombre de lits"};
+        Object headers[] = { "code_service", "no_chambre", "surveillant", "nb_lits"};
         this.jScrollPane1.getViewport().removeAll();
         //JTable table = null;
         try {
             table = new JTable(this.req.gettable("chambre"), headers);
+            table.getModel().addTableModelListener(new UpdateCell("chambre", this.req));
+
         } catch (SQLException ex) {
             Logger.getLogger(MiseAJour.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -281,11 +289,12 @@ public class MiseAJour extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         //On affiche la table Docteur
-        Object headers[] = { "Numéro", "Spécialité"};
+        Object headers[] = { "numero", "specialite"};
         this.jScrollPane1.getViewport().removeAll();
         //JTable table = null;
         try {
             table = new JTable(this.req.gettable("docteur"), headers);
+            table.getModel().addTableModelListener(new UpdateCell("docteur", this.req));
         } catch (SQLException ex) {
             Logger.getLogger(MiseAJour.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -294,11 +303,12 @@ public class MiseAJour extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // On affiche la table Employés
-        Object headers[] = { "Numéro", "Nom", "Prénom", "Adresse", "Téléphone"};
+        Object headers[] = { "numero", "nom", "prenom", "adresse", "tel"};
         this.jScrollPane1.getViewport().removeAll();
         //JTable table = null;
         try {
             table = new JTable(this.req.gettable("employe"), headers);
+            table.getModel().addTableModelListener(new UpdateCell("employe", this.req));
         } catch (SQLException ex) {
             Logger.getLogger(MiseAJour.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -307,11 +317,12 @@ public class MiseAJour extends javax.swing.JFrame {
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // On affiche la table Soigné
-        Object headers[] = { "Numéro docteur", "Numéro malade"};
+        Object headers[] = { "no_docteur", "no_malade"};
         this.jScrollPane1.getViewport().removeAll();
         //JTable table = null;
         try {
             table = new JTable(this.req.gettable("soigne"), headers);
+            table.getModel().addTableModelListener(new UpdateCell("soigne", this.req));
         } catch (SQLException ex) {
             Logger.getLogger(MiseAJour.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -320,11 +331,12 @@ public class MiseAJour extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         //On affiche la table Hospitalisation
-        Object headers[] = { "Numéro du malade", "Code Service", "Numéro de chambre", "Lit"};
+        Object headers[] = { "no_malade", "code_service", "no_chambre", "lit"};
         this.jScrollPane1.getViewport().removeAll();
         //JTable table = null;
         try {
             table = new JTable(this.req.gettable("hospitalisation"), headers);
+            table.getModel().addTableModelListener(new UpdateCell("hospitalisation", this.req));
         } catch (SQLException ex) {
             Logger.getLogger(MiseAJour.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -333,11 +345,12 @@ public class MiseAJour extends javax.swing.JFrame {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         //On affiche la table Infirmiers
-        Object headers[] = { "Numéro", "Code Service", "Rotation", "Salaire"};
+        Object headers[] = { "numero", "code_service", "rotation", "salaire"};
         this.jScrollPane1.getViewport().removeAll();
         //JTable table = null;
         try {
             table = new JTable(this.req.gettable("infirmier"), headers);
+            table.getModel().addTableModelListener(new UpdateCell("infirmier", this.req));
         } catch (SQLException ex) {
             Logger.getLogger(MiseAJour.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -346,11 +359,12 @@ public class MiseAJour extends javax.swing.JFrame {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // On affiche la table Malade
-        Object headers[] = { "Numéro", "Nom", "Prénom", "Adresse", "Téléphone", "Mutuelle"};
+        Object headers[] = { "numero", "nom", "prenom", "adresse", "tel", "mutuelle"};
         this.jScrollPane1.getViewport().removeAll();
         //JTable table = null;
         try {
             table = new JTable(this.req.gettable("malade"), headers);
+            table.getModel().addTableModelListener(new UpdateCell("malade", this.req));
         } catch (SQLException ex) {
             Logger.getLogger(MiseAJour.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -359,11 +373,12 @@ public class MiseAJour extends javax.swing.JFrame {
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // On affiche la table Service
-        Object headers[] = { "Code", "Nom", "Batiment", "Directeur"};
+        Object headers[] = { "code", "nom", "batiment", "directeur"};
         this.jScrollPane1.getViewport().removeAll();
         //JTable table = null;
         try {
             table = new JTable(this.req.gettable("service"), headers);
+            table.getModel().addTableModelListener(new UpdateCell("service", this.req));
         } catch (SQLException ex) {
             Logger.getLogger(MiseAJour.class.getName()).log(Level.SEVERE, null, ex);
         }

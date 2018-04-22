@@ -67,6 +67,26 @@ public class Requetes {
     }
     
     
+    
+    public void updaterow(String table, String field, String value, String previous){
+
+        System.out.println("SELECT "+field+" FROM "+ table +" WHERE "+field+" = '"+previous+"' LIMIT 1");
+        
+        try{
+            
+
+             stmt.executeUpdate("INSERT INTO "+ table +" ("+field+") VALUES ('"+value+"') ON DUPLICATE KEY UPDATE SET "+field+" = '"+value+"' WHERE "+field+" = '"+previous+"' ");
+  
+            
+            
+           
+       }catch(SQLException e){
+            System.out.println(e.getMessage());
+       }
+
+    }
+    
+    
     public Object[][] usermaaf() throws SQLException{
         
          ResultSet rs;

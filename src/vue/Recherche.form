@@ -35,24 +35,27 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane2" alignment="0" min="-2" pref="726" max="-2" attributes="0"/>
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="jScrollPane2" min="-2" pref="726" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
-                      <Component id="Requêtes" max="32767" attributes="0"/>
+                      <Component id="Requêtes" pref="393" max="32767" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="651" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="552" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -65,21 +68,27 @@
               <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-                      <Component id="jScrollPane2" min="-2" pref="574" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="9" max="32767" attributes="0"/>
                       <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                       <Component id="jButton1" min="-2" pref="38" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="Requêtes" min="-2" pref="594" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="Requêtes" min="-2" pref="594" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="jScrollPane2" min="-2" pref="574" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
               </Group>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -138,39 +147,9 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="R12" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="R13" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="jButton3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jButton4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                      <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                                      <Component id="R7" min="-2" pref="228" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
-                          <Component id="jButton2" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="R8" alignment="0" min="-2" pref="575" max="-2" attributes="0"/>
-                          <Component id="R15" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="0" pref="484" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
                               <Component id="R2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jButton5" min="-2" pref="168" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="R5" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="R11" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="R1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
@@ -181,20 +160,11 @@
                                       <Component id="R14" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="R6" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="R10" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="R9" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                                  <Component id="R4" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
+                              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+                              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
@@ -208,8 +178,52 @@
                               <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                               <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="R11" min="-2" max="-2" attributes="0"/>
+                                  <Component id="R12" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="R13" min="-2" max="-2" attributes="0"/>
+                                  <Component id="R1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="R7" alignment="0" min="-2" pref="228" max="-2" attributes="0"/>
+                          <Component id="R9" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="R10" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButton4" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButton3" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="R4" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="R8" min="-2" pref="575" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="R15" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="R5" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="308" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -242,35 +256,35 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="15" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="R4" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="R11" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="R1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace pref="8" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="R12" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="R13" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="R7" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="R9" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="R10" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="jButton4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jButton3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -282,7 +296,7 @@
                   <Color blue="ee" green="ee" red="cc" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Sans" size="12" style="0"/>
+                  <Font name="Hiragino Kaku Gothic Pro" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="R11. Nombre de patients gu&#xe9;ris, par m&#xe9;decin."/>
                 <Property name="horizontalAlignment" type="int" value="2"/>
@@ -297,7 +311,7 @@
                   <Color blue="ee" green="ee" red="cc" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Sans" size="12" style="0"/>
+                  <Font name="Hiragino Kaku Gothic Pro" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="R3. Service et son directeur"/>
                 <Property name="horizontalAlignment" type="int" value="2"/>
@@ -312,7 +326,7 @@
                   <Color blue="ee" green="ee" red="cc" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Sans" size="12" style="0"/>
+                  <Font name="Hiragino Kaku Gothic Pro" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="R12. Repartition des mutuelles par patient"/>
                 <Property name="horizontalAlignment" type="int" value="2"/>
@@ -327,7 +341,7 @@
                   <Color blue="ee" green="ee" red="cc" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Sans" size="12" style="0"/>
+                  <Font name="Hiragino Kaku Gothic Pro" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="R15. Nom de l&#x2019;infirmier qui a le salaire maximum et montant de celui-ci "/>
                 <Property name="horizontalAlignment" type="int" value="2"/>
@@ -342,7 +356,7 @@
                   <Color blue="ee" green="ee" red="cc" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Sans" size="12" style="0"/>
+                  <Font name="Hiragino Kaku Gothic Pro" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="R14. Nombre de patients par service "/>
                 <Property name="horizontalAlignment" type="int" value="2"/>
@@ -357,7 +371,7 @@
                   <Color blue="ee" green="ee" red="cc" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Sans" size="12" style="0"/>
+                  <Font name="Hiragino Kaku Gothic Pro" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="R4. Chambre et leur surveillant"/>
                 <Property name="horizontalAlignment" type="int" value="2"/>
@@ -372,7 +386,7 @@
                   <Color blue="ee" green="ee" red="cc" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Sans" size="12" style="0"/>
+                  <Font name="Hiragino Kaku Gothic Pro" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="R8. Nb d&#x2019;infirmier(&#xe8;res) affect&#xe9;(es) au service / nb malades hospitalis&#xe9;s pr chaque service."/>
                 <Property name="horizontalAlignment" type="int" value="2"/>
@@ -387,7 +401,7 @@
                   <Color blue="ee" green="ee" red="cc" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Sans" size="12" style="0"/>
+                  <Font name="Hiragino Kaku Gothic Pro" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="R7. Fiche d&apos;identite d&apos;un docteur "/>
                 <Property name="horizontalAlignment" type="int" value="2"/>
@@ -402,7 +416,7 @@
                   <Color blue="ee" green="ee" red="cc" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Sans" size="12" style="0"/>
+                  <Font name="Hiragino Kaku Gothic Pro" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="R5. Moyenne des salaires des infirmiers(&#xe8;res) par service"/>
                 <Property name="horizontalAlignment" type="int" value="2"/>
@@ -417,7 +431,7 @@
                   <Color blue="ee" green="ee" red="cc" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Sans" size="12" style="0"/>
+                  <Font name="Hiragino Kaku Gothic Pro" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="R1. Adh&#xe9;rents de la MAAF"/>
                 <Property name="horizontalAlignment" type="int" value="2"/>
@@ -432,7 +446,7 @@
                   <Color blue="ee" green="ee" red="cc" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Sans" size="12" style="0"/>
+                  <Font name="Hiragino Kaku Gothic Pro" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="R6. Nombre moyen de lits par chambre pour chaque service du b&#xe2;timent A "/>
                 <Property name="horizontalAlignment" type="int" value="2"/>
@@ -447,7 +461,7 @@
                   <Color blue="ee" green="ee" red="cc" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Sans" size="12" style="0"/>
+                  <Font name="Hiragino Kaku Gothic Pro" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="R9. Pr&#xe9;nom et nom des docteurs ayant au moins un malade hospitalis&#xe9;. "/>
                 <Property name="horizontalAlignment" type="int" value="2"/>
@@ -462,7 +476,7 @@
                   <Color blue="ee" green="ee" red="cc" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Sans" size="12" style="0"/>
+                  <Font name="Hiragino Kaku Gothic Pro" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="R10. Pr&#xe9;nom et nom des docteurs n&#x2019;ayant aucun malade hospitalis&#xe9;. "/>
                 <Property name="horizontalAlignment" type="int" value="2"/>
@@ -477,7 +491,7 @@
                   <Color blue="ee" green="ee" red="cc" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Sans" size="12" style="0"/>
+                  <Font name="Hiragino Kaku Gothic Pro" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="R2. Infirmiers de nuit"/>
                 <Property name="horizontalAlignment" type="int" value="2"/>
@@ -492,7 +506,7 @@
                   <Color blue="ee" green="ee" red="cc" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Sans" size="12" style="0"/>
+                  <Font name="Hiragino Kaku Gothic Pro" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="R13. Fiche d&#x2019;identit&#xe9; d&#x2019;un patient. "/>
                 <Property name="horizontalAlignment" type="int" value="2"/>
@@ -507,7 +521,7 @@
                   <Color blue="ee" green="ee" red="cc" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Sans" size="12" style="0"/>
+                  <Font name="Hiragino Kaku Gothic Pro" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="R16. Infirmiers qui ont un salaire compris entre 1200 et 1500&#x20ac;"/>
                 <Property name="horizontalAlignment" type="int" value="2"/>
@@ -522,7 +536,7 @@
                   <Color blue="ee" green="ee" red="cc" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Sans" size="12" style="0"/>
+                  <Font name="Hiragino Kaku Gothic Pro" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="R18. Nombre d&apos;infirmi&#xe8;res qui ont un salaire compris entre a 1800 et 2100&#x20ac;"/>
                 <Property name="horizontalAlignment" type="int" value="2"/>
@@ -537,7 +551,7 @@
                   <Color blue="ee" green="ee" red="cc" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Sans" size="12" style="0"/>
+                  <Font name="Hiragino Kaku Gothic Pro" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="R17. Liste des employ&#xe9;s "/>
                 <Property name="horizontalAlignment" type="int" value="2"/>
@@ -552,7 +566,7 @@
                   <Color blue="ee" green="ee" red="cc" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Sans" size="12" style="0"/>
+                  <Font name="Hiragino Kaku Gothic Pro" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="R19. Infirmiers de jour"/>
               </Properties>
@@ -563,7 +577,7 @@
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Sans" size="14" style="0"/>
+                  <Font name="Hiragino Kaku Gothic Pro" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="INFORMATIONS INFIRMIER"/>
               </Properties>
@@ -571,7 +585,7 @@
             <Component class="javax.swing.JLabel" name="jLabel3">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Sans" size="14" style="0"/>
+                  <Font name="Hiragino Kaku Gothic Pro" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="INFORMATIONS SERVICE"/>
               </Properties>
@@ -579,7 +593,7 @@
             <Component class="javax.swing.JLabel" name="jLabel4">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Sans" size="14" style="0"/>
+                  <Font name="Hiragino Kaku Gothic Pro" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="INFORMATIONS PATIENT "/>
               </Properties>
@@ -587,15 +601,15 @@
             <Component class="javax.swing.JLabel" name="jLabel5">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Sans" size="14" style="0"/>
+                  <Font name="Hiragino Kaku Gothic Pro" size="14" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="INFORMATIONS EMPLOYE "/>
+                <Property name="text" type="java.lang.String" value="INFORMATIONS EMPLOY&#xc9;S "/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel6">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Sans" size="14" style="0"/>
+                  <Font name="Hiragino Kaku Gothic Pro" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="INFORMATIONS DOCTEUR "/>
               </Properties>
@@ -603,7 +617,7 @@
             <Component class="javax.swing.JLabel" name="jLabel7">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lucida Sans" size="14" style="0"/>
+                  <Font name="Hiragino Kaku Gothic Pro" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="INFORMATIONS CHAMBRE "/>
               </Properties>

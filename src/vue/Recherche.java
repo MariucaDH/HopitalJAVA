@@ -127,7 +127,7 @@ public class Recherche extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
         R11.setBackground(new java.awt.Color(204, 238, 238));
-        R11.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        R11.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
         R11.setText("R11. Nombre de patients guéris, par médecin.");
         R11.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         R11.addActionListener(new java.awt.event.ActionListener() {
@@ -137,7 +137,7 @@ public class Recherche extends javax.swing.JFrame {
         });
 
         R3.setBackground(new java.awt.Color(204, 238, 238));
-        R3.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        R3.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
         R3.setText("R3. Service et son directeur");
         R3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         R3.addActionListener(new java.awt.event.ActionListener() {
@@ -147,7 +147,7 @@ public class Recherche extends javax.swing.JFrame {
         });
 
         R12.setBackground(new java.awt.Color(204, 238, 238));
-        R12.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        R12.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
         R12.setText("R12. Repartition des mutuelles par patient");
         R12.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         R12.addActionListener(new java.awt.event.ActionListener() {
@@ -157,7 +157,7 @@ public class Recherche extends javax.swing.JFrame {
         });
 
         R15.setBackground(new java.awt.Color(204, 238, 238));
-        R15.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        R15.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
         R15.setText("R15. Nom de l’infirmier qui a le salaire maximum et montant de celui-ci ");
         R15.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         R15.addActionListener(new java.awt.event.ActionListener() {
@@ -167,7 +167,7 @@ public class Recherche extends javax.swing.JFrame {
         });
 
         R14.setBackground(new java.awt.Color(204, 238, 238));
-        R14.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        R14.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
         R14.setText("R14. Nombre de patients par service ");
         R14.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         R14.addActionListener(new java.awt.event.ActionListener() {
@@ -177,7 +177,7 @@ public class Recherche extends javax.swing.JFrame {
         });
 
         R4.setBackground(new java.awt.Color(204, 238, 238));
-        R4.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        R4.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
         R4.setText("R4. Chambre et leur surveillant");
         R4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         R4.addActionListener(new java.awt.event.ActionListener() {
@@ -187,7 +187,7 @@ public class Recherche extends javax.swing.JFrame {
         });
 
         R8.setBackground(new java.awt.Color(204, 238, 238));
-        R8.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        R8.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
         R8.setText("R8. Nb d’infirmier(ères) affecté(es) au service / nb malades hospitalisés pr chaque service.");
         R8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         R8.addActionListener(new java.awt.event.ActionListener() {
@@ -197,7 +197,7 @@ public class Recherche extends javax.swing.JFrame {
         });
 
         R7.setBackground(new java.awt.Color(204, 238, 238));
-        R7.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        R7.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
         R7.setText("R7. Fiche d'identite d'un docteur ");
         R7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         R7.addActionListener(new java.awt.event.ActionListener() {
@@ -207,7 +207,7 @@ public class Recherche extends javax.swing.JFrame {
         });
 
         R5.setBackground(new java.awt.Color(204, 238, 238));
-        R5.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        R5.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
         R5.setText("R5. Moyenne des salaires des infirmiers(ères) par service");
         R5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         R5.addActionListener(new java.awt.event.ActionListener() {
@@ -217,7 +217,7 @@ public class Recherche extends javax.swing.JFrame {
         });
 
         R1.setBackground(new java.awt.Color(204, 238, 238));
-        R1.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        R1.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
         R1.setText("R1. Adhérents de la MAAF");
         R1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         R1.addActionListener(new java.awt.event.ActionListener() {
@@ -227,7 +227,7 @@ public class Recherche extends javax.swing.JFrame {
         });
 
         R6.setBackground(new java.awt.Color(204, 238, 238));
-        R6.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        R6.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
         R6.setText("R6. Nombre moyen de lits par chambre pour chaque service du bâtiment A ");
         R6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         R6.addActionListener(new java.awt.event.ActionListener() {
@@ -237,7 +237,7 @@ public class Recherche extends javax.swing.JFrame {
         });
 
         R9.setBackground(new java.awt.Color(204, 238, 238));
-        R9.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        R9.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
         R9.setText("R9. Prénom et nom des docteurs ayant au moins un malade hospitalisé. ");
         R9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         R9.addActionListener(new java.awt.event.ActionListener() {
@@ -247,7 +247,7 @@ public class Recherche extends javax.swing.JFrame {
         });
 
         R10.setBackground(new java.awt.Color(204, 238, 238));
-        R10.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        R10.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
         R10.setText("R10. Prénom et nom des docteurs n’ayant aucun malade hospitalisé. ");
         R10.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         R10.addActionListener(new java.awt.event.ActionListener() {
@@ -257,7 +257,7 @@ public class Recherche extends javax.swing.JFrame {
         });
 
         R2.setBackground(new java.awt.Color(204, 238, 238));
-        R2.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        R2.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
         R2.setText("R2. Infirmiers de nuit");
         R2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         R2.addActionListener(new java.awt.event.ActionListener() {
@@ -267,7 +267,7 @@ public class Recherche extends javax.swing.JFrame {
         });
 
         R13.setBackground(new java.awt.Color(204, 238, 238));
-        R13.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        R13.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
         R13.setText("R13. Fiche d’identité d’un patient. ");
         R13.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         R13.addActionListener(new java.awt.event.ActionListener() {
@@ -277,7 +277,7 @@ public class Recherche extends javax.swing.JFrame {
         });
 
         jButton2.setBackground(new java.awt.Color(204, 238, 238));
-        jButton2.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
         jButton2.setText("R16. Infirmiers qui ont un salaire compris entre 1200 et 1500€");
         jButton2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -287,7 +287,7 @@ public class Recherche extends javax.swing.JFrame {
         });
 
         jButton3.setBackground(new java.awt.Color(204, 238, 238));
-        jButton3.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
         jButton3.setText("R18. Nombre d'infirmières qui ont un salaire compris entre a 1800 et 2100€");
         jButton3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -297,7 +297,7 @@ public class Recherche extends javax.swing.JFrame {
         });
 
         jButton4.setBackground(new java.awt.Color(204, 238, 238));
-        jButton4.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        jButton4.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
         jButton4.setText("R17. Liste des employés ");
         jButton4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -307,7 +307,7 @@ public class Recherche extends javax.swing.JFrame {
         });
 
         jButton5.setBackground(new java.awt.Color(204, 238, 238));
-        jButton5.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        jButton5.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
         jButton5.setText("R19. Infirmiers de jour");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -315,22 +315,22 @@ public class Recherche extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Lucida Sans", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
         jLabel2.setText("INFORMATIONS INFIRMIER");
 
-        jLabel3.setFont(new java.awt.Font("Lucida Sans", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
         jLabel3.setText("INFORMATIONS SERVICE");
 
-        jLabel4.setFont(new java.awt.Font("Lucida Sans", 0, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
         jLabel4.setText("INFORMATIONS PATIENT ");
 
-        jLabel5.setFont(new java.awt.Font("Lucida Sans", 0, 14)); // NOI18N
-        jLabel5.setText("INFORMATIONS EMPLOYE ");
+        jLabel5.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
+        jLabel5.setText("INFORMATIONS EMPLOYÉS ");
 
-        jLabel6.setFont(new java.awt.Font("Lucida Sans", 0, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
         jLabel6.setText("INFORMATIONS DOCTEUR ");
 
-        jLabel7.setFont(new java.awt.Font("Lucida Sans", 0, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
         jLabel7.setText("INFORMATIONS CHAMBRE ");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -341,32 +341,9 @@ public class Recherche extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(R12)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(R13))
-                            .addComponent(jButton3)
-                            .addComponent(jButton4)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel6)
-                                .addComponent(R7, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(jButton2)
-                    .addComponent(R8, javax.swing.GroupLayout.PREFERRED_SIZE, 575, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(R15))
-                .addGap(0, 484, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(R2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(R5)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(R11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(R1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -374,17 +351,10 @@ public class Recherche extends javax.swing.JFrame {
                                 .addComponent(R3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(R14))
-                            .addComponent(R6)
-                            .addComponent(R10)
-                            .addComponent(R9)))
+                            .addComponent(R6)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel7)
-                            .addComponent(R4)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(12, 12, 12))))
+                        .addGap(57, 57, 57)
+                        .addComponent(jLabel7))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(61, 61, 61)
                         .addComponent(jLabel3))
@@ -393,8 +363,42 @@ public class Recherche extends javax.swing.JFrame {
                         .addComponent(jLabel2))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(52, 52, 52)
-                        .addComponent(jLabel5)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel5))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(R11)
+                            .addComponent(R12))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(R13)
+                            .addComponent(R1)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addComponent(jLabel4))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addComponent(jLabel6))
+                    .addComponent(R7, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(R9)
+                    .addComponent(R10)
+                    .addComponent(jButton4)
+                    .addComponent(jButton3)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(R4))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton2))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(R8, javax.swing.GroupLayout.PREFERRED_SIZE, 575, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(R15))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(R5)))
+                .addContainerGap(308, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -423,33 +427,33 @@ public class Recherche extends javax.swing.JFrame {
                     .addComponent(R14))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(R4)
-                .addGap(45, 45, 45)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(R11)
                     .addComponent(R1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(R12)
                     .addComponent(R13))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel6)
-                .addGap(4, 4, 4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(R7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(R9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(R10)
-                .addGap(24, 24, 24)
-                .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton3)
-                .addGap(29, 29, 29))
+                .addGap(100, 100, 100))
         );
 
         jScrollPane2.setViewportView(jPanel1);
@@ -459,21 +463,23 @@ public class Recherche extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 726, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addGap(78, 78, 78)))
+                        .addGap(78, 78, 78))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 726, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(57, 57, 57)
-                        .addComponent(Requêtes)
+                        .addComponent(Requêtes, javax.swing.GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton1))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 651, Short.MAX_VALUE)))
+                        .addGap(0, 552, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -483,17 +489,20 @@ public class Recherche extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 574, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(5, 5, 5)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Requêtes, javax.swing.GroupLayout.PREFERRED_SIZE, 594, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Requêtes, javax.swing.GroupLayout.PREFERRED_SIZE, 594, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 574, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap())
         );
 
         pack();

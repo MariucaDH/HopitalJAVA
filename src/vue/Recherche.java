@@ -74,6 +74,7 @@ public class Recherche extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenu1 = new javax.swing.JMenu();
+        jButton7 = new javax.swing.JButton();
         Requêtes = new javax.swing.JScrollPane();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -86,7 +87,6 @@ public class Recherche extends javax.swing.JFrame {
         R15 = new javax.swing.JButton();
         R14 = new javax.swing.JButton();
         R4 = new javax.swing.JButton();
-        R8 = new javax.swing.JButton();
         R7 = new javax.swing.JButton();
         R5 = new javax.swing.JButton();
         R1 = new javax.swing.JButton();
@@ -105,14 +105,28 @@ public class Recherche extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        R16 = new javax.swing.JButton();
+        R17 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
 
         jMenu1.setText("jMenu1");
+
+        jButton7.setBackground(new java.awt.Color(204, 238, 238));
+        jButton7.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        jButton7.setText("R21. Employés dont le nom commence par \"S\" ");
+        jButton7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Requêtes.setBackground(new java.awt.Color(255, 204, 255));
 
-        jLabel1.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 24)); // NOI18N
         jLabel1.setText("Requêtes");
 
         jButton1.setBackground(new java.awt.Color(204, 204, 255));
@@ -186,20 +200,9 @@ public class Recherche extends javax.swing.JFrame {
             }
         });
 
-        R8.setBackground(new java.awt.Color(204, 238, 238));
-        R8.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
-        R8.setText("R8. Nb d’infirmier(ères) affecté(es) au service / nb malades hospitalisés pr chaque service.");
-        R8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        R8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                R8ActionPerformed(evt);
-            }
-        });
-
         R7.setBackground(new java.awt.Color(204, 238, 238));
         R7.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
         R7.setText("R7. Fiche d'identite d'un docteur ");
-        R7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         R7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 R7ActionPerformed(evt);
@@ -288,7 +291,7 @@ public class Recherche extends javax.swing.JFrame {
 
         jButton3.setBackground(new java.awt.Color(204, 238, 238));
         jButton3.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
-        jButton3.setText("R18. Nombre d'infirmières qui ont un salaire compris entre a 1800 et 2100€");
+        jButton3.setText("R18. Nombre de docteurs par spécialité");
         jButton3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -298,7 +301,7 @@ public class Recherche extends javax.swing.JFrame {
 
         jButton4.setBackground(new java.awt.Color(204, 238, 238));
         jButton4.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
-        jButton4.setText("R17. Liste des employés ");
+        jButton4.setText("R17. Liste des employés");
         jButton4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -333,6 +336,46 @@ public class Recherche extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Lucida Sans", 0, 14)); // NOI18N
         jLabel7.setText("INFORMATIONS CHAMBRE ");
 
+        R16.setBackground(new java.awt.Color(204, 238, 238));
+        R16.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        R16.setText("R19. Nombre de chambres occupées ");
+        R16.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        R16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                R16ActionPerformed(evt);
+            }
+        });
+
+        R17.setBackground(new java.awt.Color(204, 238, 238));
+        R17.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        R17.setText("R20. Patients de la chambre 401");
+        R17.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        R17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                R17ActionPerformed(evt);
+            }
+        });
+
+        jButton6.setBackground(new java.awt.Color(204, 238, 238));
+        jButton6.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        jButton6.setText("R21. Employés dont le nom commence par \"S\" ");
+        jButton6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        jButton8.setBackground(new java.awt.Color(204, 238, 238));
+        jButton8.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        jButton8.setText("R21. Employés dont le prénom contient un \"A\"");
+        jButton8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -341,20 +384,18 @@ public class Recherche extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(R12)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(R13))
-                            .addComponent(jButton3)
-                            .addComponent(jButton4)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel6)
-                                .addComponent(R7, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(R12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(R13))
                     .addComponent(jButton2)
-                    .addComponent(R8, javax.swing.GroupLayout.PREFERRED_SIZE, 575, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(R15))
-                .addGap(0, 484, Short.MAX_VALUE))
+                .addGap(0, 158, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton4)
+                .addGap(190, 190, 190))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -378,10 +419,9 @@ public class Recherche extends javax.swing.JFrame {
                             .addComponent(R10)
                             .addComponent(R9)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
+                        .addGap(58, 58, 58)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel7)
-                            .addComponent(R4)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addGap(12, 12, 12))))
@@ -392,8 +432,27 @@ public class Recherche extends javax.swing.JFrame {
                         .addGap(58, 58, 58)
                         .addComponent(jLabel2))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addComponent(jLabel5)))
+                        .addContainerGap()
+                        .addComponent(R4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(R17))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(R16))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addComponent(jLabel5))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton3))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel6)
+                            .addComponent(R7, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton8)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -410,22 +469,24 @@ public class Recherche extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(R15)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(R8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton2)
-                .addGap(18, 18, 18)
+                .addGap(24, 24, 24)
                 .addComponent(jLabel3)
-                .addGap(8, 8, 8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(R6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(R3)
-                    .addComponent(R14))
-                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(R14)
+                    .addComponent(R3))
+                .addGap(37, 37, 37)
                 .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
-                .addComponent(R4)
-                .addGap(45, 45, 45)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(R4)
+                    .addComponent(R17))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(R16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -435,21 +496,25 @@ public class Recherche extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(R12)
                     .addComponent(R13))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel6)
-                .addGap(4, 4, 4)
+                .addGap(12, 12, 12)
                 .addComponent(R7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(2, 2, 2)
                 .addComponent(R9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(R10)
-                .addGap(24, 24, 24)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton3)
-                .addGap(29, 29, 29))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton4)
+                    .addComponent(jButton6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton8)
+                .addContainerGap())
         );
 
         jScrollPane2.setViewportView(jPanel1);
@@ -460,40 +525,39 @@ public class Recherche extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 726, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel1)
-                        .addGap(78, 78, 78)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(57, 57, 57)
-                        .addComponent(Requêtes)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton1))
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(726, 726, 726)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 651, Short.MAX_VALUE)))
+                        .addGap(0, 651, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 599, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(56, 56, 56)
+                        .addComponent(Requêtes, javax.swing.GroupLayout.PREFERRED_SIZE, 614, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(83, 83, 83)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(597, 597, 597)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(jLabel1)
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 574, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(5, 5, 5)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Requêtes, javax.swing.GroupLayout.PREFERRED_SIZE, 594, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 574, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Requêtes, javax.swing.GroupLayout.PREFERRED_SIZE, 574, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -522,8 +586,8 @@ public class Recherche extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         Object[][] result;
         try {
-            result = this.req.salaireinf1800();
-            Object headers[] = {"Nom", "Prénom"};
+            result = this.req.medecinparspe();
+            Object headers[] = {"Spécialité", "Nombre de docteurs"};
             this.Requêtes.getViewport().removeAll();
             JTable table = new JTable(result, headers);
             this.Requêtes.getViewport().add(table);
@@ -667,21 +731,6 @@ public class Recherche extends javax.swing.JFrame {
         
     }//GEN-LAST:event_R7ActionPerformed
 
-    private void R8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_R8ActionPerformed
-        //R8. Nb d’infirmier(ères) affecté(es) au service / nb malades hospitalisés pr chaque service.
-        //BOuton 10 //Infimières //jButton10ActionPerformed
-        Object[][] result;
-        try {
-            result = this.req.ratioservices();
-            Object headers[] = {"Nombre d'infirmiers", "Nom", "Ratio"};
-            this.Requêtes.getViewport().removeAll();
-            JTable table = new JTable(result, headers);
-            this.Requêtes.getViewport().add(table);
-        } catch (SQLException ex) {
-            Logger.getLogger(Recherche.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_R8ActionPerformed
-
     private void R14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_R14ActionPerformed
         //R14 : Nombre de patients par service
            Object[][] result;
@@ -786,6 +835,65 @@ Object[][] result;
         }  // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void R16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_R16ActionPerformed
+         ///R19
+Object[][] result;
+        try {
+            result = this.req.nbchoccupees();
+            Object headers[] = {"Service", "Nombre de chambres occupées"};
+            this.Requêtes.getViewport().removeAll();
+            JTable table = new JTable(result, headers);
+            this.Requêtes.getViewport().add(table);
+        } catch (SQLException ex) {
+            Logger.getLogger(Recherche.class.getName()).log(Level.SEVERE, null, ex);
+        }  // TODO add your handling code here:
+            // TODO add your handling code here:
+    }//GEN-LAST:event_R16ActionPerformed
+
+    private void R17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_R17ActionPerformed
+       Object[][] result;
+        try {
+            result = this.req.ch401();
+            Object headers[] = {"Prénom", "Nom"};
+            this.Requêtes.getViewport().removeAll();
+            JTable table = new JTable(result, headers);
+            this.Requêtes.getViewport().add(table);
+        } catch (SQLException ex) {
+            Logger.getLogger(Recherche.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+      
+    }//GEN-LAST:event_R17ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+ Object[][] result;
+        try {
+            result = this.req.empS();
+            Object headers[] = {"Prénom", "Nom"};
+            this.Requêtes.getViewport().removeAll();
+            JTable table = new JTable(result, headers);
+            this.Requêtes.getViewport().add(table);
+        } catch (SQLException ex) {
+            Logger.getLogger(Recherche.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+          }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:jButton7ActionPerformed
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+       Object[][] result;
+        try {
+            result = this.req.empprenomA();
+            Object headers[] = {"Prénom", "Nom"};
+            this.Requêtes.getViewport().removeAll();
+            JTable table = new JTable(result, headers);
+            this.Requêtes.getViewport().add(table);
+        } catch (SQLException ex) {
+            Logger.getLogger(Recherche.class.getName()).log(Level.SEVERE, null, ex);
+        }  // TODO add your handling code here:
+    }//GEN-LAST:event_jButton8ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -798,13 +906,14 @@ Object[][] result;
     private javax.swing.JButton R13;
     private javax.swing.JButton R14;
     private javax.swing.JButton R15;
+    private javax.swing.JButton R16;
+    private javax.swing.JButton R17;
     private javax.swing.JButton R2;
     private javax.swing.JButton R3;
     private javax.swing.JButton R4;
     private javax.swing.JButton R5;
     private javax.swing.JButton R6;
     private javax.swing.JButton R7;
-    private javax.swing.JButton R8;
     private javax.swing.JButton R9;
     private javax.swing.JScrollPane Requêtes;
     private javax.swing.JButton jButton1;
@@ -812,6 +921,9 @@ Object[][] result;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

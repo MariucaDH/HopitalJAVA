@@ -274,7 +274,7 @@ public class Requetes {
         return liste;
     }
     
-    
+ /*   
     //Ratio service
     public Object[][] ratioservices() throws SQLException{ //ratioservices()
         //R8
@@ -293,8 +293,9 @@ public class Requetes {
                 rs2 = stmt.executeQuery("SELECT COUNT(hospitalisation.no_malade) as m, service.nom FROM hospitalisation, service WHERE service.code = hospitalisation.code_service GROUP BY hospitalisation.code_service");
                 while ( rs2.next() ) {
                     
-                    if(rs2.getString("nom").equals(nom)){
-                        rapport = totalinfirmiers+"/"+rs2.getString("m");
+                    if(nom.equals(rs2.getString("nom"))){
+                        System.out.println("coucou");
+                        rapport = totalinfirmiers +"/" + rs2.getString("m");
                     }
                     
                 }
@@ -314,7 +315,7 @@ public class Requetes {
         return liste;
     }
     
-    
+   */ 
      //------------------------------------------------//
     //R14 : Nombre de medecins par spécialité :
     ///->>> POUR LE GRAPHIQUE 3
@@ -342,10 +343,35 @@ public class Requetes {
         return liste;
     }
      
-     
+     ///R19
+      public Object[][] nbchoccupees() throws SQLException{ //nbchoccupeespar service 
+        
+         ResultSet rs;
+         liste = new Object[100][10];
+
+ 
+            rs = stmt.executeQuery("SELECT chambre.code_service as s, COUNT(DISTINCT hospitalisation.no_chambre) AS nbch FROM chambre, hospitalisation WHERE hospitalisation.no_chambre = chambre.no_chambre GROUP BY chambre.code_service");
+            int i = 0;
+            while ( rs.next() ) {
+                 String service = rs.getString("s");
+
+                String nbch = rs.getString("nbch");
+               // String nbsoigne = rs.getString("nbpat");
+                
+                Object[] str = new Object[] {service, nbch};
+                
+                
+                liste[i] = str;
+               
+                i++;
+            }
+        
+
+        return liste;
+    }
      //R11 : NB de PATIENTS guéris par médecin (numero docteur)
      
-       public Object[][] nbpatientsgueris() throws SQLException{ //nbpatientsgueris
+       public Object[][] nbpatientsgueris () throws SQLException{ //nbpatientsgueris
         
          ResultSet rs;
          liste = new Object[100][10];
@@ -531,7 +557,7 @@ public class Requetes {
          liste = new Object[100][10];
 
  
-            rs = stmt.executeQuery("SELECT malade.prenom AS p, malade.nom AS n, malade.adresse AS a, malade.mutuelle AS m, hospitalisation.no_chambre AS ch FROM hospitalisation, malade WHERE hospitalisation.no_malade = malade.numero");
+            rs = stmt.executeQuery("SELECT malade.prenom AS p, malade.nom AS n, malade.adresse AS a, malade.mutuelle AS m, hospitalisation.no_chambre AS ch FROM hospitalisation, malade WHERE hospitalisation.no_malade = malade.numero ORDER BY malade.nom ASC");
             int i = 0;
             while ( rs.next() ) {
                 String prenom = rs.getString("p");
@@ -556,8 +582,8 @@ public class Requetes {
          ResultSet rs;
          liste = new Object[100][10];
 
- 
-            rs = stmt.executeQuery("SELECT employe.prenom AS p, employe.nom AS n, docteur.specialite AS spe  FROM employe, docteur WHERE docteur.numero = employe.numero");
+ rs = stmt.executeQuery("SELECT employe.prenom AS p, employe.nom AS n, docteur.specialite AS spe FROM employe, docteur WHERE docteur.numero=employe.numero");
+         //   rs = stmt.executeQuery("SELECT employe.prenom AS p, employe.nom AS n, docteur.specialite AS spe  FROM employe, docteur WHERE docteur.numero = employe.numero");
             int i = 0;
             while ( rs.next() ) {
                 String prenom = rs.getString("p");
@@ -626,5 +652,78 @@ public class Requetes {
         return liste;
     }
     
+                  
+                               
+                  public Object[][] ch401() throws SQLException{ //liste des employes R17
+        
+         ResultSet rs;
+         liste = new Object[100][10];
+
+ 
+            rs = stmt.executeQuery("SELECT malade.prenom AS p, malade.nom AS n FROM malade, hospitalisation WHERE hospitalisation.no_malade=malade.numero AND hospitalisation.no_chambre = '401'");
+            int i = 0;
+            while ( rs.next() ) {
+                String prenom = rs.getString("p");
+                                String nom = rs.getString("n");
+                               
+
+                
+                Object[] str = new Object[] {prenom, nom};
+                
+                
+                liste[i] = str;
+                
+                i++;
+            }
+        return liste;
+    }
+                  
+                                public Object[][] empS() throws SQLException{ //liste des employes R17
+        
+         ResultSet rs;
+         liste = new Object[100][10];
+
+ 
+            rs = stmt.executeQuery("SELECT employe.prenom AS p, employe.nom AS n FROM employe WHERE employe.nom LIKE 'S%' ORDER BY employe.nom ASC");
+            int i = 0;
+            while ( rs.next() ) {
+                String prenom = rs.getString("p");
+                                String nom = rs.getString("n");
+                               
+
+                
+                Object[] str = new Object[] {prenom, nom};
+                
+                
+                liste[i] = str;
+                
+                i++;
+            }
+        return liste;
+    }
+                                
+         public Object[][] empprenomA() throws SQLException{ //liste des employes R17
+        
+         ResultSet rs;
+         liste = new Object[100][10];
+
+ 
+            rs = stmt.executeQuery("SELECT employe.prenom AS p, employe.nom AS n FROM employe WHERE employe.prenom LIKE '%A%' ORDER BY employe.nom ASC");
+            int i = 0;
+            while ( rs.next() ) {
+                String prenom = rs.getString("p");
+                                String nom = rs.getString("n");
+                               
+
+                
+                Object[] str = new Object[] {prenom, nom};
+                
+                
+                liste[i] = str;
+                
+                i++;
+            }
+        return liste;
+    }
         
 }

@@ -23,13 +23,14 @@ public class Recherche extends javax.swing.JFrame {
 
     public static Recherche r = new Recherche();
     private Requetes req;
+
     /**
      * Creates new form Recherche
      */
     public Recherche() {
         initComponents();
-        getContentPane().setBackground(new Color(204,204,255));
-        
+        getContentPane().setBackground(new Color(204, 204, 255));
+
         try {
             initreq(true);
         } catch (SQLException ex) {
@@ -39,13 +40,12 @@ public class Recherche extends javax.swing.JFrame {
         }
 
     }
-    
+
     public Recherche(boolean local) {
-        
+
         initComponents();
-        getContentPane().setBackground(new Color(204,204,255));
-        
-        
+        getContentPane().setBackground(new Color(204, 204, 255));
+
         try {
             initreq(local);
         } catch (SQLException ex) {
@@ -56,13 +56,14 @@ public class Recherche extends javax.swing.JFrame {
     }
 
     public void initreq(boolean local) throws SQLException, ClassNotFoundException {
-        if(local == true){
-            this.req = new Requetes("local");  
+        if (local == true) {
+            this.req = new Requetes("local");
         } else {
-            this.req = new Requetes("ece");  
+            this.req = new Requetes("ece");
         }
-        
+
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -73,29 +74,43 @@ public class Recherche extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenu1 = new javax.swing.JMenu();
-        jScrollBar1 = new javax.swing.JScrollBar();
         Requêtes = new javax.swing.JScrollPane();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jPanel1 = new javax.swing.JPanel();
+        R11 = new javax.swing.JButton();
+        R3 = new javax.swing.JButton();
+        R12 = new javax.swing.JButton();
+        R15 = new javax.swing.JButton();
+        R14 = new javax.swing.JButton();
+        R4 = new javax.swing.JButton();
+        R8 = new javax.swing.JButton();
+        R7 = new javax.swing.JButton();
+        R5 = new javax.swing.JButton();
+        R1 = new javax.swing.JButton();
+        R6 = new javax.swing.JButton();
+        R9 = new javax.swing.JButton();
+        R10 = new javax.swing.JButton();
+        R2 = new javax.swing.JButton();
+        R13 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         jMenu1.setText("jMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        Requêtes.setBackground(new java.awt.Color(255, 204, 255));
 
         jLabel1.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 18)); // NOI18N
         jLabel1.setText("Requêtes");
@@ -109,374 +124,705 @@ public class Recherche extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(204, 204, 238));
-        jButton2.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
-        jButton2.setText("R1. Prénom et nom des malades affiliés à la mutuelle « MAAF ».");
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+
+        R11.setBackground(new java.awt.Color(204, 238, 238));
+        R11.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        R11.setText("R11. Nombre de patients guéris, par médecin.");
+        R11.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        R11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                R11ActionPerformed(evt);
+            }
+        });
+
+        R3.setBackground(new java.awt.Color(204, 238, 238));
+        R3.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        R3.setText("R3. Service et son directeur");
+        R3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        R3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                R3ActionPerformed(evt);
+            }
+        });
+
+        R12.setBackground(new java.awt.Color(204, 238, 238));
+        R12.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        R12.setText("R12. Repartition des mutuelles par patient");
+        R12.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        R12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                R12ActionPerformed(evt);
+            }
+        });
+
+        R15.setBackground(new java.awt.Color(204, 238, 238));
+        R15.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        R15.setText("R15. Nom de l’infirmier qui a le salaire maximum et montant de celui-ci ");
+        R15.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        R15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                R15ActionPerformed(evt);
+            }
+        });
+
+        R14.setBackground(new java.awt.Color(204, 238, 238));
+        R14.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        R14.setText("R14. Nombre de patients par service ");
+        R14.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        R14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                R14ActionPerformed(evt);
+            }
+        });
+
+        R4.setBackground(new java.awt.Color(204, 238, 238));
+        R4.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        R4.setText("R4. Chambre et leur surveillant");
+        R4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        R4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                R4ActionPerformed(evt);
+            }
+        });
+
+        R8.setBackground(new java.awt.Color(204, 238, 238));
+        R8.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        R8.setText("R8. Nb d’infirmier(ères) affecté(es) au service / nb malades hospitalisés pr chaque service.");
+        R8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        R8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                R8ActionPerformed(evt);
+            }
+        });
+
+        R7.setBackground(new java.awt.Color(204, 238, 238));
+        R7.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        R7.setText("R7. Fiche d'identite d'un docteur ");
+        R7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        R7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                R7ActionPerformed(evt);
+            }
+        });
+
+        R5.setBackground(new java.awt.Color(204, 238, 238));
+        R5.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        R5.setText("R5. Moyenne des salaires des infirmiers(ères) par service");
+        R5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        R5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                R5ActionPerformed(evt);
+            }
+        });
+
+        R1.setBackground(new java.awt.Color(204, 238, 238));
+        R1.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        R1.setText("R1. Adhérents de la MAAF");
+        R1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        R1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                R1ActionPerformed(evt);
+            }
+        });
+
+        R6.setBackground(new java.awt.Color(204, 238, 238));
+        R6.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        R6.setText("R6. Nombre moyen de lits par chambre pour chaque service du bâtiment A ");
+        R6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        R6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                R6ActionPerformed(evt);
+            }
+        });
+
+        R9.setBackground(new java.awt.Color(204, 238, 238));
+        R9.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        R9.setText("R9. Prénom et nom des docteurs ayant au moins un malade hospitalisé. ");
+        R9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        R9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                R9ActionPerformed(evt);
+            }
+        });
+
+        R10.setBackground(new java.awt.Color(204, 238, 238));
+        R10.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        R10.setText("R10. Prénom et nom des docteurs n’ayant aucun malade hospitalisé. ");
+        R10.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        R10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                R10ActionPerformed(evt);
+            }
+        });
+
+        R2.setBackground(new java.awt.Color(204, 238, 238));
+        R2.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        R2.setText("R2. Infirmiers de nuit");
+        R2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        R2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                R2ActionPerformed(evt);
+            }
+        });
+
+        R13.setBackground(new java.awt.Color(204, 238, 238));
+        R13.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        R13.setText("R13. Fiche d’identité d’un patient. ");
+        R13.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        R13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                R13ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setBackground(new java.awt.Color(204, 238, 238));
+        jButton2.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        jButton2.setText("R16. Infirmiers qui ont un salaire compris entre 1200 et 1500€");
+        jButton2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(204, 204, 238));
-        jButton4.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
-        jButton4.setText("R2. Prénom et nom des infirmier(ères) travaillant pendant la rotation de nuit. ");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-
-        jButton5.setBackground(new java.awt.Color(204, 204, 238));
-        jButton5.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
-        jButton5.setText("R3. Nom et bâtiment d’un service & prénom, nom et spécialité de son directeur. ");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-
-        jButton6.setBackground(new java.awt.Color(204, 204, 238));
-        jButton6.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
-        jButton6.setText("R4. Numéro du lit, numéro de la chambre, nom du service ainsi que le prénom.");
-
-        jButton7.setBackground(new java.awt.Color(204, 204, 238));
-        jButton7.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
-        jButton7.setText("R5. Moyenne des salaires des infirmiers(ères) par service.");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
-
-        jButton8.setBackground(new java.awt.Color(204, 204, 238));
-        jButton8.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
-        jButton8.setText("R6. Nombre moyen de lits par chambre pour chaque service du bâtiment « A » de l’hôpital.");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
-            }
-        });
-
-        jButton9.setBackground(new java.awt.Color(204, 204, 238));
-        jButton9.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
-        jButton9.setText("R7. Nb total médecins & nb spés médicales pr chaque malade soigné par + de 3 médecins.");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
-            }
-        });
-
-        jButton10.setBackground(new java.awt.Color(204, 204, 238));
-        jButton10.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
-        jButton10.setText("R8. Nb d’infirmier(ères) affecté(es) au service / nb malades hospitalisés pr chaque service.");
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
-            }
-        });
-
-        jButton11.setBackground(new java.awt.Color(204, 204, 238));
-        jButton11.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
-        jButton11.setText("R9. Prénom et nom des docteurs ayant au moins un malade hospitalisé. ");
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
-            }
-        });
-
-        jButton12.setBackground(new java.awt.Color(204, 204, 238));
-        jButton12.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
-        jButton12.setText("R10. Prénom et nom des docteurs n’ayant aucun malade hospitalisé. ");
-        jButton12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
-            }
-        });
-
-        jButton13.setBackground(new java.awt.Color(204, 204, 238));
-        jButton13.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
-        jButton13.setText("R11. Nombre de patients guéris, par médecin.");
-        jButton13.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton13ActionPerformed(evt);
-            }
-        });
-
-        jButton14.setBackground(new java.awt.Color(204, 204, 238));
-        jButton14.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
-        jButton14.setText("R12. Mutuelles des patients, par médecin.");
-        jButton14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton14ActionPerformed(evt);
-            }
-        });
-
-        jButton15.setBackground(new java.awt.Color(204, 204, 238));
-        jButton15.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
-        jButton15.setText("R13. Fiche d’identité d’un patient. ");
-        jButton15.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton15ActionPerformed(evt);
-            }
-        });
-
-        jButton3.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
-        jButton3.setText("R15 : Nom de l’infirmier qui a le salaire maximum et montant de celui-ci ");
+        jButton3.setBackground(new java.awt.Color(204, 238, 238));
+        jButton3.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        jButton3.setText("R18. Nombre d'infirmières qui ont un salaire compris entre a 1800 et 2100€");
+        jButton3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
 
-        jButton16.setFont(new java.awt.Font("Hiragino Kaku Gothic Pro", 0, 14)); // NOI18N
-        jButton16.setText("R14 : Nombre de patients par bâtiment ");
-        jButton16.addActionListener(new java.awt.event.ActionListener() {
+        jButton4.setBackground(new java.awt.Color(204, 238, 238));
+        jButton4.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        jButton4.setText("R17. Liste des employés ");
+        jButton4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton16ActionPerformed(evt);
+                jButton4ActionPerformed(evt);
             }
         });
+
+        jButton5.setBackground(new java.awt.Color(204, 238, 238));
+        jButton5.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
+        jButton5.setText("R19. Infirmiers de jour");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Lucida Sans", 0, 14)); // NOI18N
+        jLabel2.setText("INFORMATIONS INFIRMIER");
+
+        jLabel3.setFont(new java.awt.Font("Lucida Sans", 0, 14)); // NOI18N
+        jLabel3.setText("INFORMATIONS SERVICE");
+
+        jLabel4.setFont(new java.awt.Font("Lucida Sans", 0, 14)); // NOI18N
+        jLabel4.setText("INFORMATIONS PATIENT ");
+
+        jLabel5.setFont(new java.awt.Font("Lucida Sans", 0, 14)); // NOI18N
+        jLabel5.setText("INFORMATIONS EMPLOYE ");
+
+        jLabel6.setFont(new java.awt.Font("Lucida Sans", 0, 14)); // NOI18N
+        jLabel6.setText("INFORMATIONS DOCTEUR ");
+
+        jLabel7.setFont(new java.awt.Font("Lucida Sans", 0, 14)); // NOI18N
+        jLabel7.setText("INFORMATIONS CHAMBRE ");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(R12)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(R13))
+                            .addComponent(jButton3)
+                            .addComponent(jButton4)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel6)
+                                .addComponent(R7, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jButton2)
+                    .addComponent(R8, javax.swing.GroupLayout.PREFERRED_SIZE, 575, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(R15))
+                .addGap(0, 484, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(R2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(R5)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(R11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(R1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(R3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(R14))
+                            .addComponent(R6)
+                            .addComponent(R10)
+                            .addComponent(R9)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel7)
+                            .addComponent(R4)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(12, 12, 12))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addComponent(jLabel3))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(58, 58, 58)
+                        .addComponent(jLabel2))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addComponent(jLabel5)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(R2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(R5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(R15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(R8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton2)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3)
+                .addGap(8, 8, 8)
+                .addComponent(R6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(R3)
+                    .addComponent(R14))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addComponent(R4)
+                .addGap(45, 45, 45)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(R11)
+                    .addComponent(R1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(R12)
+                    .addComponent(R13))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel6)
+                .addGap(4, 4, 4)
+                .addComponent(R7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(R9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(R10)
+                .addGap(24, 24, 24)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton3)
+                .addGap(29, 29, 29))
+        );
+
+        jScrollPane2.setViewportView(jPanel1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 726, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel1)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton15)
-                            .addComponent(jButton11)
-                            .addComponent(jButton12)
-                            .addComponent(jButton13)
-                            .addComponent(jButton14)
-                            .addComponent(jButton2)
-                            .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton4)
-                            .addComponent(jButton5)
-                            .addComponent(jButton6)
-                            .addComponent(jButton7)
-                            .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
-                    .addComponent(jButton16)
-                    .addComponent(jButton3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Requêtes, javax.swing.GroupLayout.PREFERRED_SIZE, 571, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(31, 31, 31))
+                        .addGap(78, 78, 78)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(57, 57, 57)
+                        .addComponent(Requêtes)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 651, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jLabel1)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(71, 71, 71)
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton12)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton13)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton14)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton15)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton16)
-                        .addGap(7, 7, 7)
-                        .addComponent(jButton3))
+                        .addGap(9, 9, 9)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 574, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(5, 5, 5)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(jLabel1)
-                        .addGap(44, 44, 44)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 525, Short.MAX_VALUE)
-                            .addComponent(Requêtes))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 625, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Requêtes, javax.swing.GroupLayout.PREFERRED_SIZE, 594, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-     new Bienvenue().setVisible(true);   //On revient à l'accueil
-     this.setVisible(false); //On ferme la fenetre Recherche
+        //jButton1ActionPerformed
+        new Bienvenue().setVisible(true);   //On revient à l'accueil
+        this.setVisible(false); //On ferme la fenetre Recherche
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-    //R8. Nb d’infirmier(ères) affecté(es) au service / nb malades hospitalisés pr chaque service.     
-    }//GEN-LAST:event_jButton10ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        //R1. Prénom et nom des malades affiliés à la mutuelle « MAAF ».
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         Object[][] result;
         try {
-            result = this.req.usermaaf();
-             Object headers[] = { "Prenom", "Nom" };
+            result = this.req.employes();
+            Object headers[] = {"Prénom", "Nom", "Téléphone", "Adresse" };
             this.Requêtes.getViewport().removeAll();
             JTable table = new JTable(result, headers);
-            this.Requêtes.getViewport().add (table);
+            this.Requêtes.getViewport().add(table);
         } catch (SQLException ex) {
             Logger.getLogger(Recherche.class.getName()).log(Level.SEVERE, null, ex);
         }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        Object[][] result;
+        try {
+            result = this.req.salaireinf1800();
+            Object headers[] = {"Nom", "Prénom"};
+            this.Requêtes.getViewport().removeAll();
+            JTable table = new JTable(result, headers);
+            this.Requêtes.getViewport().add(table);
+        } catch (SQLException ex) {
+            Logger.getLogger(Recherche.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        Object[][] result;
+        try {
+            result = this.req.salairesdesinfi();
+            Object headers[] = {"Nom", "Prénom"};
+            this.Requêtes.getViewport().removeAll();
+            JTable table = new JTable(result, headers);
+            this.Requêtes.getViewport().add(table);
+        } catch (SQLException ex) {
+            Logger.getLogger(Recherche.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        //R2. Prénom et nom des infirmier(ères) travaillant pendant la rotation de nuit. 
+    private void R13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_R13ActionPerformed
+        //R13. Fiche d’identité d’un patient.
+            Object[][] result;
+        try {
+            result = this.req.fichepatient();
+            Object headers[] = {"Prenom", "Nom", "Adresse", "Mutuelle", "Chambre"};
+            this.Requêtes.getViewport().removeAll();
+            JTable table = new JTable(result, headers);
+            this.Requêtes.getViewport().add(table);
+        } catch (SQLException ex) {
+            Logger.getLogger(Recherche.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_R13ActionPerformed
+
+    private void R2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_R2ActionPerformed
+        //R2. Prénom et nom des infirmier(ères) travaillant pendant la rotation de nuit.
+        //Bouton4 // Infirmiers //jButton4ActionPerformed
         Object[][] result;
         try {
             result = this.req.infirmiernuit();
-             Object headers[] = { "Prenom", "Nom" };
+            Object headers[] = {"Prenom", "Nom"};
             this.Requêtes.getViewport().removeAll();
             JTable table = new JTable(result, headers);
-            this.Requêtes.getViewport().add (table);
+            this.Requêtes.getViewport().add(table);
         } catch (SQLException ex) {
             Logger.getLogger(Recherche.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_R2ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        //R3. Nom et bâtiment d’un service & prénom, nom et spécialité de son directeur. 
+    private void R10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_R10ActionPerformed
+        //R10. Prénom et nom des docteurs n’ayant aucun malade hospitalisé.
+        // jButton12ActionPerformed //Docteur
+            Object[][] result;
+        try {
+            result = this.req.docteurssanspatients();
+            Object headers[] = {"Prénom", "Nom"};
+            this.Requêtes.getViewport().removeAll();
+            JTable table = new JTable(result, headers);
+            this.Requêtes.getViewport().add(table);
+        } catch (SQLException ex) {
+            Logger.getLogger(Recherche.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_R10ActionPerformed
+
+    private void R9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_R9ActionPerformed
+        //R9. Prénom et nom des docteurs ayant au moins un malade hospitalisé.
+        //jButton11ActionPerformed // Docteur
+        
         Object[][] result;
         try {
-            result = this.req.services();
-             Object headers[] = { "Service", "Batiment", "Prenom", "Nom du directeur" };
+            result = this.req.docteursavecpatients();
+            Object headers[] = {"Prénom", "Nom"};
             this.Requêtes.getViewport().removeAll();
             JTable table = new JTable(result, headers);
-            this.Requêtes.getViewport().add (table);
+            this.Requêtes.getViewport().add(table);
         } catch (SQLException ex) {
             Logger.getLogger(Recherche.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_R9ActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-      //R5. Moyenne des salaires des infirmiers(ères) par service.
-        Object[][] result;
-        try {
-            result = this.req.moyennesalaires();
-             Object headers[] = { "Services", "Salaires"};
-            this.Requêtes.getViewport().removeAll();
-            JTable table = new JTable(result, headers);
-            this.Requêtes.getViewport().add (table);
-        } catch (SQLException ex) {
-            Logger.getLogger(Recherche.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jButton7ActionPerformed
-
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void R6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_R6ActionPerformed
         //R6. Nombre moyen de lits par chambre pour chaque service du bâtiment « A » de l’hôpital.
+        //jButton8ActionPerformed BOuton 8 // CHAMBRE //SERVICE
         Object[][] result;
         try {
             result = this.req.litbatimentA();
-             Object headers[] = { "Services", "Salaires"};
+            Object headers[] = {"Chambre", "Nombre moyen de lits"};
             this.Requêtes.getViewport().removeAll();
             JTable table = new JTable(result, headers);
-            this.Requêtes.getViewport().add (table);
+            this.Requêtes.getViewport().add(table);
         } catch (SQLException ex) {
             Logger.getLogger(Recherche.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_R6ActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+    private void R1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_R1ActionPerformed
+        //R1. Prénom et nom des malades affiliés à la mutuelle « MAAF ». //Bouton2 //Malade
+        Object[][] result; //jButton2ActionPerformed
+        try {
+            result = this.req.usermaaf();
+            Object headers[] = {"Prenom", "Nom"};
+            this.Requêtes.getViewport().removeAll();
+            JTable table = new JTable(result, headers);
+            this.Requêtes.getViewport().add(table);
+        } catch (SQLException ex) {
+            Logger.getLogger(Recherche.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_R1ActionPerformed
+
+    private void R5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_R5ActionPerformed
+        //R5. Moyenne des salaires des infirmiers(ères) par service.
+        //BOuton7 //jButton7ActionPerformed //Infimières
+        Object[][] result;
+        try {
+            result = this.req.moyennesalaires();
+            Object headers[] = {"Services", "Moyenne de salaires"};
+            this.Requêtes.getViewport().removeAll();
+            JTable table = new JTable(result, headers);
+            this.Requêtes.getViewport().add(table);
+        } catch (SQLException ex) {
+            Logger.getLogger(Recherche.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_R5ActionPerformed
+
+    private void R7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_R7ActionPerformed
         //R7. Nb total médecins & nb spés médicales pr chaque malade soigné par + de 3 médecins.
-    }//GEN-LAST:event_jButton9ActionPerformed
+        //jButton9ActionPerformed
+            Object[][] result;
+        try {
+            result = this.req.infodoc();
+            Object headers[] = {"Prénom", "Nom", "Spécialité"};
+            this.Requêtes.getViewport().removeAll();
+            JTable table = new JTable(result, headers);
+            this.Requêtes.getViewport().add(table);
+        } catch (SQLException ex) {
+            Logger.getLogger(Recherche.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_R7ActionPerformed
 
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        //R9. Prénom et nom des docteurs ayant au moins un malade hospitalisé. 
-    }//GEN-LAST:event_jButton11ActionPerformed
+    private void R8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_R8ActionPerformed
+        //R8. Nb d’infirmier(ères) affecté(es) au service / nb malades hospitalisés pr chaque service.
+        //BOuton 10 //Infimières //jButton10ActionPerformed
+        Object[][] result;
+        try {
+            result = this.req.ratioservices();
+            Object headers[] = {"Nombre d'infirmiers", "Nom", "Ratio"};
+            this.Requêtes.getViewport().removeAll();
+            JTable table = new JTable(result, headers);
+            this.Requêtes.getViewport().add(table);
+        } catch (SQLException ex) {
+            Logger.getLogger(Recherche.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_R8ActionPerformed
 
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        //R10. Prénom et nom des docteurs n’ayant aucun malade hospitalisé. 
-    }//GEN-LAST:event_jButton12ActionPerformed
+    private void R14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_R14ActionPerformed
+        //R14 : Nombre de patients par service
+           Object[][] result;
+        try {
+            result = this.req.patientsservice();
+            Object headers[] = {"Nom du service", "Nombre de patients"};
+            this.Requêtes.getViewport().removeAll();
+            JTable table = new JTable(result, headers);
+            this.Requêtes.getViewport().add(table);
+        } catch (SQLException ex) {
+            Logger.getLogger(Recherche.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_R14ActionPerformed
 
-    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+    private void R15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_R15ActionPerformed
+        //R15 : Nom de l’infirmier qui a le salaire maximum et montant de celui-ci  //Infirmier
+        //jButton3ActionPerformed
+        Object[][] result;
+        try {
+            result = this.req.salairemaxinf();
+            Object headers[] = {"Prénom de l'infirmier", "Nom de l'infirmier", "Montant du salaire"};
+            this.Requêtes.getViewport().removeAll();
+            JTable table = new JTable(result, headers);
+            this.Requêtes.getViewport().add(table);
+        } catch (SQLException ex) {
+            Logger.getLogger(Recherche.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_R15ActionPerformed
+
+    private void R12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_R12ActionPerformed
+        //R12. Mutuelles des patients, par médecin.
+        Object[][] result;
+        try {
+            result = this.req.repartitionmutuelles();
+            Object headers[] = {"Nom mutuelle", "Nombre d'ahdérents"};
+            this.Requêtes.getViewport().removeAll();
+            JTable table = new JTable(result, headers);
+            this.Requêtes.getViewport().add(table);
+        } catch (SQLException ex) {
+            Logger.getLogger(Recherche.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        // jButton14ActionPerformed
+    }//GEN-LAST:event_R12ActionPerformed
+
+    private void R3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_R3ActionPerformed
+        //R3. Nom et bâtiment d’un service & prénom, nom et spécialité de son directeur.
+        //Service Bouton5 //jButton5ActionPerformed //SERVICE
+        Object[][] result;
+        try {
+            result = this.req.services();
+            Object headers[] = {"Service", "Batiment", "Prenom", "Nom"};
+            this.Requêtes.getViewport().removeAll();
+            JTable table = new JTable(result, headers);
+            this.Requêtes.getViewport().add(table);
+        } catch (SQLException ex) {
+            Logger.getLogger(Recherche.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_R3ActionPerformed
+
+    private void R11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_R11ActionPerformed
         //R11. Nombre de patients guéris, par médecin.
+        //jButton13ActionPerformed //Bouton13 //Docteur
         Object[][] result;
         try {
             result = this.req.nbpatientsgueris();
-             Object headers[] = { "Numero du docteur", "Nombre de patients soignés"};
+            Object headers[] = {"Prenom du docteur", "Nom du docteur", "Nombre de patients soignés"};
             this.Requêtes.getViewport().removeAll();
             JTable table = new JTable(result, headers);
-            this.Requêtes.getViewport().add (table);
+            this.Requêtes.getViewport().add(table);
         } catch (SQLException ex) {
             Logger.getLogger(Recherche.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jButton13ActionPerformed
+    }//GEN-LAST:event_R11ActionPerformed
 
-    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        //R12. Mutuelles des patients, par médecin.
-    }//GEN-LAST:event_jButton14ActionPerformed
+    
+    //REQUETE 4
+    private void R4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_R4ActionPerformed
 
-    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-        //R13. Fiche d’identité d’un patient. 
-    }//GEN-LAST:event_jButton15ActionPerformed
-
-    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
-        //R14 : Nombre de patients par bâtiment 
-    }//GEN-LAST:event_jButton16ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        //R15 : Nom de l’infirmier qui a le salaire maximum et montant de celui-ci 
-        Object[][] result;
+Object[][] result;
         try {
-            result = this.req.patientsservice();
-             Object headers[] = { "Nom du service", "Nombre de patients"};
+            result = this.req.infochambre();
+            Object headers[] = {"Chambre", "Service", "Nom de lit", "Prénom", "Nom"};
             this.Requêtes.getViewport().removeAll();
             JTable table = new JTable(result, headers);
-            this.Requêtes.getViewport().add (table);
+            this.Requêtes.getViewport().add(table);
         } catch (SQLException ex) {
             Logger.getLogger(Recherche.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_R4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+      
+Object[][] result;
+        try {
+            result = this.req.infirmierjour();
+            Object headers[] = {"Prénom", "Nom"};
+            this.Requêtes.getViewport().removeAll();
+            JTable table = new JTable(result, headers);
+            this.Requêtes.getViewport().add(table);
+        } catch (SQLException ex) {
+            Logger.getLogger(Recherche.class.getName()).log(Level.SEVERE, null, ex);
+        }  // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton R1;
+    private javax.swing.JButton R10;
+    private javax.swing.JButton R11;
+    private javax.swing.JButton R12;
+    private javax.swing.JButton R13;
+    private javax.swing.JButton R14;
+    private javax.swing.JButton R15;
+    private javax.swing.JButton R2;
+    private javax.swing.JButton R3;
+    private javax.swing.JButton R4;
+    private javax.swing.JButton R5;
+    private javax.swing.JButton R6;
+    private javax.swing.JButton R7;
+    private javax.swing.JButton R8;
+    private javax.swing.JButton R9;
     private javax.swing.JScrollPane Requêtes;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JScrollBar jScrollBar1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
+
 }

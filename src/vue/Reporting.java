@@ -255,8 +255,9 @@ jPanel1.add(chp2);
 
 G4 = new Graphique ("Chart 4"); 
 JFreeChart ch4; 
-ch4 = G4.createChart4(G4.donneeschart4());
-ChartPanel chp4 = new ChartPanel(ch4); 
+        try {
+            ch4 = G4.createChart4(G4.donneeschart4());
+            ChartPanel chp4 = new ChartPanel(ch4); 
 chp4.setSize(464,317); 
 chp4.setVisible(true);
  jPanel1.removeAll();
@@ -264,6 +265,10 @@ chp4.setVisible(true);
 jPanel1.add(chp4);
  jPanel1.setSize(463,316);
        jPanel1.setVisible(true);
+        } catch (SQLException | ClassNotFoundException ex) {
+            Logger.getLogger(Reporting.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }//GEN-LAST:event_jButton5ActionPerformed
 
    

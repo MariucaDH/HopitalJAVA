@@ -31,30 +31,25 @@ public class Requetes {
             this.bdd = new Connexion("hospital", "root", "azerty");
         } else if(type == "ece") {
             this.is_distant = true;
-            this.bdd = new Connexion("mysql8.db4free.net");
+            this.bdd = new Connexion("jk151987", "RTlbuabe00//", "jk151987-rw", "ss1eCbfw");
         }
         this.stmt = this.bdd.getstatement();
     }
     
-    
-    public Object[][] gettable(String table) throws SQLException{
+    //REQUETE 1 :
+    public Object[][] usermaaf() throws SQLException{
         
          ResultSet rs;
-         liste = new Object[200][10];
+         liste = new Object[100][10];
 
  
-            rs = stmt.executeQuery("SELECT * FROM "+table+" ORDER BY 1 ASC");
-            ResultSetMetaData rsmd = rs.getMetaData();
-            int columnsNumber = rsmd.getColumnCount(); 
-            
+            rs = stmt.executeQuery("SELECT nom, prenom FROM malade WHERE mutuelle = 'MAAF'");
             int i = 0;
             while ( rs.next() ) {
+                String nom = rs.getString("nom");
+                String prenom = rs.getString("prenom");
                 
-                Object[] str = new Object[columnsNumber];
-                for(int j = 1 ; j <= columnsNumber; j++){
-                        str[j-1] = rs.getString(j);
-                  }
-                
+                Object[] str = new Object[] { prenom, nom};
                 
                 
                 liste[i] = str;
@@ -66,6 +61,7 @@ public class Requetes {
         return liste;
     }
     
+<<<<<<< HEAD
     
     
     public void updaterow(String table, String field, String value, String previous){
@@ -112,31 +108,10 @@ public class Requetes {
     
     
     public Object[][] usermaaf() throws SQLException{
-        
-         ResultSet rs;
-         liste = new Object[100][10];
-
- 
-            rs = stmt.executeQuery("SELECT nom, prenom FROM malade WHERE mutuelle = 'MAAF'");
-            int i = 0;
-            while ( rs.next() ) {
-                String nom = rs.getString("nom");
-                String prenom = rs.getString("prenom");
-                
-                Object[] str = new Object[] { prenom, nom};
-                
-                
-                liste[i] = str;
-                //System.out.println(prenom);
-                i++;
-            }
-        
-
-        return liste;
-    }
-    
-    
+=======
+    //REQUETE 2 : 
     public Object[][] infirmiernuit() throws SQLException{
+>>>>>>> c2e240fa72172a54e366307bc049d7df4b33cd32
         
          ResultSet rs;
          liste = new Object[100][10];
@@ -159,25 +134,81 @@ public class Requetes {
 
         return liste;
     }
+      public Object[][] infirmierjour() throws SQLException{
+        
+         ResultSet rs;
+         liste = new Object[100][10];
+
+ 
+            rs = stmt.executeQuery("SELECT employe.nom as n, employe.prenom as p FROM employe,infirmier  WHERE infirmier.rotation = 'JOUR' AND employe.numero = infirmier.numero");
+            int i = 0;
+            while ( rs.next() ) {
+                String nom = rs.getString("n");
+                String prenom = rs.getString("p");
+                
+                Object[] str = new Object[] { prenom, nom};
+                
+                
+                liste[i] = str;
+                //System.out.println(prenom);
+                i++;
+            }
+        
+
+        return liste;
+    }
     
+   ///REQUETE 3 :  Services et leur directeur
     public Object[][] services() throws SQLException{
         
          ResultSet rs;
          liste = new Object[100][10];
 
  
-            rs = stmt.executeQuery("SELECT employe.nom as n, employe.prenom as p, service.nom as sn, service.batiment as ba FROM employe, service  WHERE employe.numero = service.directeur ORDER BY  service.nom ASC");
+            rs = stmt.executeQuery("SELECT service.nom as s, service.batiment as b, employe.prenom as p, employe.nom as n FROM service, employe  WHERE service.directeur = employe.numero");
             int i = 0;
-            while ( rs.next() ) {
+            while (rs.next()) {
                 
-                String service = rs.getString("sn");
-                String batiment = rs.getString("ba");
+                String batiment = rs.getString("b");
+                String service = rs.getString("s");
                 
+               // String lit = rs.getString("l");
                 String nom = rs.getString("n");
                 String prenom = rs.getString("p");
+
+                
+                Object[] str = new Object[] {service,  batiment, prenom, nom};
                 
                 
-                Object[] str = new Object[] { service, batiment, prenom, nom};
+                liste[i] = str;
+                //System.out.println(prenom);
+                i++;
+            }
+        
+
+        return liste;
+    }
+    
+    //REQUETE 4 
+    public Object[][] infochambre() throws SQLException{
+        
+         ResultSet rs;
+         liste = new Object[100][10];
+
+ 
+            rs = stmt.executeQuery("SELECT chambre.no_chambre as ch, chambre.code_service as s, chambre.nb_lits as l, employe.nom as n, employe.prenom as p FROM chambre, employe  WHERE employe.numero = chambre.surveillant");
+            int i = 0;
+            while (rs.next()) {
+                
+                String chambre = rs.getString("ch");
+                String service = rs.getString("s");
+                
+                String lit = rs.getString("l");
+                String nom = rs.getString("n");
+                String prenom = rs.getString("p");
+
+                
+                Object[] str = new Object[] {chambre, service, lit, prenom, nom};
                 
                 
                 liste[i] = str;
@@ -190,15 +221,14 @@ public class Requetes {
     }
     
     
-    
+    //R5 
     public Object[][] moyennesalaires() throws SQLException{
         
          ResultSet rs;
          liste = new Object[100][10];
 
- 
-            rs = stmt.executeQuery("SELECT code_service, AVG(salaire) as s FROM infirmier WHERE GROUP BY code_service");
-            int i = 0;
+ rs = stmt.executeQuery("SELECT code_service, AVG(salaire) as s FROM infirmier GROUP BY code_service");
+       int i = 0; 
             while ( rs.next() ) {
                 String service = rs.getString("code_service");
                 String salaire = rs.getString("s");
@@ -215,6 +245,8 @@ public class Requetes {
         return liste;
     }
     
+    
+    //R6 : 
     public Object[][] litbatimentA() throws SQLException{
         
          ResultSet rs;
@@ -240,30 +272,9 @@ public class Requetes {
         return liste;
     }
     
-    public Object[][] malades3fois() throws SQLException{
-        
-         ResultSet rs;
-         liste = new Object[100][10];
-
- 
-            rs = stmt.executeQuery("SELECT ROUND(AVG(chambre.nb_lits), 0) as lits, service.code as s FROM service, chambre WHERE service.batiment = 'A' AND service.code = chambre.code_service GROUP BY service.code");
-            int i = 0;
-            while ( rs.next() ) {
-                String service = rs.getString("s");
-                String lits = rs.getString("lits");
-                
-                Object[] str = new Object[] { service, lits};
-                
-                
-                liste[i] = str;
-                //System.out.println(prenom);
-                i++;
-            }
-        
-
-        return liste;
-    }
+   
     
+    //// R9 : 
     public Object[][] docteursavecpatients() throws SQLException{
         
          ResultSet rs;
@@ -287,7 +298,7 @@ public class Requetes {
 
         return liste;
     }
-    
+    //R10
     public Object[][] docteurssanspatients() throws SQLException{
         
          ResultSet rs;
@@ -314,8 +325,8 @@ public class Requetes {
     
     
     //Ratio service
-    public Object[][] ratioservices() throws SQLException{
-        
+    public Object[][] ratioservices() throws SQLException{ //ratioservices()
+        //R8
          ResultSet rs;
          ResultSet rs2;
         liste = new Object[100][10];
@@ -331,7 +342,7 @@ public class Requetes {
                 rs2 = stmt.executeQuery("SELECT COUNT(hospitalisation.no_malade) as m, service.nom FROM hospitalisation, service WHERE service.code = hospitalisation.code_service GROUP BY hospitalisation.code_service");
                 while ( rs2.next() ) {
                     
-                    if(rs2.getString("nom") == nom){
+                    if(rs2.getString("nom").equals(nom)){
                         rapport = totalinfirmiers+"/"+rs2.getString("m");
                     }
                     
@@ -389,13 +400,15 @@ public class Requetes {
          liste = new Object[100][10];
 
  
-            rs = stmt.executeQuery("SELECT no_docteur, COUNT( no_malade ) FROM soigne GROUP BY no_docteur");
+            rs = stmt.executeQuery("SELECT employe.nom, employe.prenom, COUNT(soigne.no_malade) AS nbpat FROM employe, soigne WHERE soigne.no_docteur = employe.numero GROUP BY no_docteur ORDER BY nbpat DESC");
             int i = 0;
             while ( rs.next() ) {
-                String numdoc = rs.getString("Numero du docteur");
-                String nbsoigne = rs.getString("Nombre de patients soignés");
+                 String nom = rs.getString("nom");
+
+                String prenom = rs.getString("prenom");
+                String nbsoigne = rs.getString("nbpat");
                 
-                Object[] str = new Object[] {numdoc, nbsoigne};
+                Object[] str = new Object[] {prenom, nom, nbsoigne};
                 
                 
                 liste[i] = str;
@@ -407,7 +420,7 @@ public class Requetes {
         return liste;
     }
      
-       //R15 : NB patients par service 
+       //R14 : NB patients par service 
        //GRAPHIQUE 1
         public Object[][] patientsservice() throws SQLException{ //patientsservice
         
@@ -436,7 +449,7 @@ public class Requetes {
    
         
         
-        
+        //R16
         public Object[][] salaireinf1200() throws SQLException{ //salaireinf1200
         
          ResultSet rs;
@@ -460,6 +473,9 @@ public class Requetes {
 
         return liste;
     }
+        
+        
+        //R17
         public Object[][] salaireinf1500() throws SQLException{ //salaireinf1500
         
          ResultSet rs;
@@ -483,6 +499,9 @@ public class Requetes {
 
         return liste;
     }
+        
+        
+        //R18
         public Object[][] salaireinf1800() throws SQLException{ //salaireinf1800
         
          ResultSet rs;
@@ -506,9 +525,155 @@ public class Requetes {
 
         return liste;
     }
+        
+        ///R12
+          public Object[][] repartitionmutuelles() throws SQLException{ //repartitionmutuelle
+        
+         ResultSet rs;
+         liste = new Object[100][10];
 
-    private void displayRow(String products, ResultSet rs) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+ 
+            rs = stmt.executeQuery("SELECT mutuelle, COUNT(DISTINCT numero) AS nbadherent FROM malade GROUP BY mutuelle");
+            int i = 0;
+            while ( rs.next() ) {
+                String mutuelle = rs.getString("mutuelle");
+                int nbadh = rs.getInt("nbadherent");
+                
+                Object[] str = new Object[] {mutuelle, nbadh};
+                
+                
+                liste[i] = str;
+                
+                i++;
+            }
+          return liste; 
+          }
+            
+         
+         public Object[][] salairemaxinf() throws SQLException{ //salairemaxinf
+        
+         ResultSet rs;
+         liste = new Object[100][10];
+
+ 
+            rs = stmt.executeQuery("SELECT employe.prenom AS p, employe.nom AS n, MAX(infirmier.salaire) AS salmax FROM employe, infirmier WHERE infirmier.numero=employe.numero");
+            int i = 0;
+            while ( rs.next() ) {
+                String prenom = rs.getString("p");
+                                String nom = rs.getString("n");
+
+                                                String salaire = rs.getString("salmax");
+
+                
+                Object[] str = new Object[] {prenom, nom, salaire};
+                
+                
+                liste[i] = str;
+                
+                i++;
+            }
+        return liste;
     }
+        public Object[][] fichepatient() throws SQLException{ //fichepatient
+        
+         ResultSet rs;
+         liste = new Object[100][10];
+
+ 
+            rs = stmt.executeQuery("SELECT malade.prenom AS p, malade.nom AS n, malade.adresse AS a, malade.mutuelle AS m, hospitalisation.no_chambre AS ch FROM hospitalisation, malade WHERE hospitalisation.no_malade = malade.numero");
+            int i = 0;
+            while ( rs.next() ) {
+                String prenom = rs.getString("p");
+                                String nom = rs.getString("n");
+                                String adresse = rs.getString("a");
+
+                                                String mutuelle = rs.getString("m");
+                                                String chambre = rs.getString("ch");
+
+                
+                Object[] str = new Object[] {prenom, nom, adresse,mutuelle, chambre};
+                
+                
+                liste[i] = str;
+                
+                i++;
+            }
+        return liste;
+    }
+              public Object[][] infodoc() throws SQLException{ //fichepatient
+        
+         ResultSet rs;
+         liste = new Object[100][10];
+
+ 
+            rs = stmt.executeQuery("SELECT employe.prenom AS p, employe.nom AS n, docteur.specialite AS spe  FROM employe, docteur WHERE docteur.numero = employe.numero");
+            int i = 0;
+            while ( rs.next() ) {
+                String prenom = rs.getString("p");
+                                String nom = rs.getString("n");
+                                String spe = rs.getString("spe");
+
+
+                
+                Object[] str = new Object[] {prenom, nom, spe};
+                
+                
+                liste[i] = str;
+                
+                i++;
+            }
+        return liste;
+              }
+        
+                 public Object[][] salairesdesinfi() throws SQLException{ //salairedesinfi
+        
+         ResultSet rs;
+         liste = new Object[100][10];
+
+ 
+            rs = stmt.executeQuery("SELECT employe.prenom AS p, employe.nom AS n, infirmier.salaire AS salmax FROM employe, infirmier WHERE salaire BETWEEN '1200' AND '1500' AND employe.numero = infirmier.numero");
+            int i = 0;
+            while ( rs.next() ) {
+                String prenom = rs.getString("p");
+                                String nom = rs.getString("n");
+
+                                                String salaire = rs.getString("salmax");
+
+                
+                Object[] str = new Object[] {prenom, nom, salaire};
+                
+                
+                liste[i] = str;
+                
+                i++;
+            }
+        return liste;
+    }
+                 
+                  public Object[][] employes() throws SQLException{ //liste des employes R17
+        
+         ResultSet rs;
+         liste = new Object[100][10];
+
+ 
+            rs = stmt.executeQuery("SELECT prenom AS p, nom AS n, adresse AS a,tel AS t FROM employe ORDER BY nom ASC");
+            int i = 0;
+            while ( rs.next() ) {
+                String prenom = rs.getString("p");
+                                String nom = rs.getString("n");
+                                String tel = rs.getString("t");
+                                String adresse = rs.getString("a");
+
+                
+                Object[] str = new Object[] {prenom, nom, tel, adresse};
+                
+                
+                liste[i] = str;
+                
+                i++;
+            }
+        return liste;
+    }
+    
         
 }

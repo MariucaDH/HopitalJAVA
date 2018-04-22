@@ -61,8 +61,7 @@ public class Requetes {
         return liste;
     }
     
-<<<<<<< HEAD
-    
+
     
     public void updaterow(String table, String field, String value, String previous){
         
@@ -92,6 +91,36 @@ public class Requetes {
 
     }
     
+    
+    public Object[][] gettable(String table) throws SQLException{
+        
+         ResultSet rs;
+         liste = new Object[200][10];
+
+ 
+            rs = stmt.executeQuery("SELECT * FROM "+table+" ORDER BY 1 ASC");
+            ResultSetMetaData rsmd = rs.getMetaData();
+            int columnsNumber = rsmd.getColumnCount(); 
+            
+            int i = 0;
+            while ( rs.next() ) {
+                
+                Object[] str = new Object[columnsNumber];
+                for(int j = 1 ; j <= columnsNumber; j++){
+                        str[j-1] = rs.getString(j);
+                  }
+                
+                
+                
+                liste[i] = str;
+                //System.out.println(prenom);
+                i++;
+            }
+        
+
+        return liste;
+    }
+    
     public void deleterow(String table, String field, String previous){
 
         
@@ -106,12 +135,11 @@ public class Requetes {
 
     }
     
+
     
-    public Object[][] usermaaf() throws SQLException{
-=======
-    //REQUETE 2 : 
-    public Object[][] infirmiernuit() throws SQLException{
->>>>>>> c2e240fa72172a54e366307bc049d7df4b33cd32
+        
+        public Object[][] infirmiernuit() throws SQLException{
+
         
          ResultSet rs;
          liste = new Object[100][10];
